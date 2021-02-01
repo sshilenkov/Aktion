@@ -1,0 +1,53 @@
+.footer
+    padding: 65px 0 128px
+    background-color: $textcolor
+    font-size: $small-fontsize
+
+    +media($tablet)
+        font-size: 14px
+
+.footer__holder
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+
+.footer__logo
+    position: relative
+
+    & > a
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+
+.footer__nav
+    & > ul
+        & > li
+            &:not(:last-of-type)
+                margin-bottom: 16px
+
+.footer__requisites
+    flex-basis: 32%
+
+.footer__contacts
+    flex-basis: 20%
+    line-height: 1.7
+
+.footer__link
+    color: $second-text-color
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: #fff
+
+.footer__info
+    color: $bg-first
+    line-height: 1.65
+
+    &:not(:last-of-type)
+        margin-bottom: 18px
+
+.footer__info--contacts
+    margin-bottom: 10px

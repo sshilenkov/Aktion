@@ -1,0 +1,28 @@
+.directions
+    display: flex
+    flex-wrap: wrap
+    max-width: 900px
+
+.directions__item
+    flex: 0 0 33.33%
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    font-size: 0
+
+    & > a
+        color: $textcolor
+        font-size: $fontsize
+        text-decoration: none
+        transition: color .3s
+
+        &:hover
+            color: $accent
+
+        +media($tablet)
+            font-size: 20px
+
+.directions__icon
+    display: inline-block
+    vertical-align: middle
+    margin-right: 13px

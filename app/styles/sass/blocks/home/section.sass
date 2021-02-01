@@ -1,0 +1,155 @@
+.section
+    padding: 128px 0
+
+    &:nth-child(even):not(.section--dark)
+        background-color: $bg-first
+
+    +media($tablet)
+        padding: 72px 0
+
+.section__slider
+    position: relative
+    
+.section__rubric,
+.section__title
+    font-size: $big-fontsize
+
+    +media($tablet)
+        font-size: 32px
+    
+.section__accent
+    color: $accent
+
+.section__link
+    padding: 10px 0
+    color: $accent
+    text-decoration: none
+
+    &::after
+        content: ''
+        position: relative
+        display: inline-block
+        width: 11px
+        height: 11px
+        margin-left: 15px
+        border: 2px solid $accent
+        border-left: none
+        border-bottom: none
+        transform: rotate(45deg)
+
+.section__slide
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 408px
+    padding: 32px
+    box-sizing: border-box
+    background-color: #fff
+
+.section__prev,
+.section__next
+    position: absolute
+    top: 50%
+    right: 0
+    z-index: 3
+    width: 64px
+    height: 64px
+    background-color: $accent
+    background-image: url('/images/src/arrow.svg')
+    background-repeat: no-repeat
+    background-position: 55% 50%
+    border-radius: 50%
+    transform: translate(50%, -50%)
+    transition: all .3s
+
+    &:hover
+        cursor: pointer
+
+    &.swiper-button-disabled
+        opacity: 0
+        visibility: hidden
+
+    +media($tablet)
+        display: none
+
+.section__prev
+    left: 0
+    transform: translate(-50%, -50%) rotate(180deg)
+
+
+.section--results
+    padding: 32px 0 0
+
+    .section__rubric,
+    .section__title
+        font-size: $fontsize
+
+        +media($tablet)
+            font-size: 20px
+
+.section--directions
+    .section__title
+        margin-bottom: 47px
+
+.section--new
+    .section__title
+        margin-bottom: 63px
+
+    .section__link
+        display: block
+        max-width: 300px
+        margin: 0 auto
+        color: $second-text-color
+        text-align: center
+
+        &::after
+            border-color: $second-text-color
+
+.section--technologies
+    .section__title
+        margin-bottom: 64px
+
+.section--career
+    +media($tablet)
+        padding-top: 97px
+        
+    .section__rubric,
+    .section__title,
+    .section__content
+        max-width: 640px
+
+        +media($tablet)
+            max-width: 420px
+
+    .section__title
+        margin-bottom: 24px
+
+    .section__content
+        position: relative
+
+.section--ad
+    .section__title
+        margin-bottom: 24px
+
+    .section__banner
+        display: block
+        margin-top: 60px
+
+        & > img
+            width: 100%
+
+.section--dark
+    background-color: $bg-second
+    background-image: url('/images/src/eagle.svg')
+    background-repeat: no-repeat
+    background-size: cover
+
+    .section__slide
+        background-color: $second-accent-dark
+
+    .section__rubric
+        color: #fff
+
+    .section__title
+        margin-bottom: 64px
+        color: $second-accent

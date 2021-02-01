@@ -1,38 +1,87 @@
 // USER VARIABLES SECTION
 
-$accent: orange // Accent Color
-$fontsize: 16px // Body Font Size
-$textcolor: #333 // Text Color
-$lineheight: 1.65 // Document Line Height
-$userfont: roboto-oh5, sans-serif // User Font Family
+$accent: #F1361D // Accent Color
+$light-accent: #FFE9E6 // Light accent color
+$second-accent: #2C82CD // Second accent color
+$second-accent-dark: #002140 // Second accent darkest
+$bg-first: #F7F6F4 // Some sections bg color
+$bg-second: #001324 // Some sections bg color
+$fontsize: 24px // Body Font Size
+$small-fontsize: 18px // Small font size
+$big-fontsize: 48px // Big font size
+$textcolor: #111 // Text Color
+$second-text-color: #999 // Secondary text color
+$lineheight: 1.3 // Document Line Height
+$userfont: LabGrotesque, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
-// Bootstrap compatible gutter variable => $gutter
-$grid-gutter-width: 30px
-$gutter: $grid-gutter-width
+// SCREEN SIZE VARIABLES
 
-// IMPORT SECTION
+$tablet: 1144px
+$mobile-lg: 790px
 
-@import 'node_modules/bootstrap/scss/bootstrap-reboot.scss' // Bootstrap Reboot collection
-@import 'node_modules/bootstrap/scss/mixins/_breakpoints.scss' // Bootstrap Breakpoints mixin
-// @import 'node_modules/bootstrap/scss/bootstrap-grid.scss' // Optional Bootstrap Grid
-// @import 'node_modules/bootstrap/scss/utilities/_sizing.scss' // Optional Bootstrap Utilites
+// MIXINS
+
+=media($resolution)
+  @media screen and (max-width: $resolution)
+    @content
 
 // FONTS LOAD SECTION
 
-@mixin font($fname, $fstyle, $fweight, $furl)
+@mixin font($fname, $fstyle, $fweight, $furl, $format)
 	@font-face
 		font-family: $fname
 		font-style: $fstyle
 		font-weight: $fweight
-		src: url($furl) format('woff2')
+		src: url($furl) format($format)
 
-@include font('roboto-oh5', normal, 400, '../fonts/roboto-regular-webfont.woff2')
-@include font('roboto-oh5', italic, 400, '../fonts/roboto-italic-webfont.woff2')
-@include font('roboto-oh5', normal, 700, '../fonts/roboto-bold-webfont.woff2')
-@include font('roboto-oh5', italic, 700, '../fonts/roboto-bolditalic-webfont.woff2')
+@include font('LabGrotesque', normal, 400, '../fonts/LabGrotesque-Regular.woff', 'woff')
+@include font('LabGrotesque', normal, 400, '../fonts/LabGrotesque-Regular.woff2', 'woff2')
+@include font('LabGrotesque', normal, 500, '../fonts/LabGrotesque-Medium.woff', 'woff')
+@include font('LabGrotesque', normal, 500, '../fonts/LabGrotesque-Medium.woff2', 'woff2')
+@include font('LabGrotesque', normal, 700, '../fonts/LabGrotesque-Bold.woff', 'woff')
+@include font('LabGrotesque', normal, 700, '../fonts/LabGrotesque-Bold.woff2', 'woff2')
 
 // GENERAL DOCUMENT STYLES
+
+//  http://meyerweb.com/eric/tools/css/reset/ 
+//  v2.0 | 20110126
+//  License: none (public domain)
+//  Changed from CSS to SASS
+
+html, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video
+	margin: 0
+	padding: 0
+	border: 0
+	font-size: 100%
+	font: inherit
+	vertical-align: baseline
+    box-sizing: border-box
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section
+	display: block
+
+body
+    margin: 0
+    padding: 0
+    border: 0
+    font-size: 100%
+    vertical-align: baseline
+
+ol, ul 
+	list-style: none
+
+blockquote, q
+	quotes: none
+
+blockquote:before, blockquote:after, q:before, q:after
+	content: ''
+	content: none
+
+table
+	border-collapse: collapse
+	border-spacing: 0
 
 ::placeholder
 	color: #666
@@ -51,8 +100,12 @@ input, textarea
 body
 	font-family: $userfont
 	font-size: $fontsize
+	font-weight: 500
 	line-height: $lineheight
 	color: $textcolor
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
+
+	+media($tablet)
+		font-size: 20px

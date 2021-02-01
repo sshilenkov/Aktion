@@ -1,0 +1,23 @@
+.technologies__icon
+    position: relative
+    width: 72px
+    height: 72px
+    border-radius: 50%
+    background-color: $light-accent
+
+    & > object
+        position: absolute
+        top: 50%
+        left: 50%
+        transform: translate(-50%, -50%)
+
+.technologies__title
+    margin-bottom: 8px
+    color: $accent
+
+.technologies__description
+    color: $second-text-color
+    font-size: $small-fontsize
+
+    +media($tablet)
+        font-size: 14px

@@ -1,0 +1,33 @@
+.new
+    display: flex
+    flex-wrap: wrap
+    margin-bottom: 86px
+
+.new__item
+    flex-grow: 1
+    flex-shrink: 1
+    flex-basis: calc(50% - 24px)
+    margin-right: 24px
+
+    &:nth-child(even)
+        margin-right: 0
+
+.new__link
+    color: $textcolor
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $accent
+
+.new__picture
+    position: relative
+    margin-bottom: 32px
+
+    & > img
+        display: block
+        max-width: 622px
+        width: 100%
+
+.new__rubric
+    color: $accent
