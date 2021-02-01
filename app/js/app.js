@@ -6,10 +6,14 @@
 // // Import vendor jQuery plugin example (not module)
 // require('~/app/libs/mmenu/dist/mmenu.js')
 
+import Header from './header/header';
 import Footer from './footer/footer';
 import Home from './home/home';
 
 document.addEventListener('DOMContentLoaded', () => {
+
+	const header = document.getElementsByClassName('header');
+	header.length && new Header(header[0]);
 
 	const home = document.getElementsByClassName('home');
 	home.length && new Home(home[0]);

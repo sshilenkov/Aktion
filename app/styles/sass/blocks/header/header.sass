@@ -3,6 +3,7 @@
     top: 0
     right: 0
     left: 0
+    z-index: 9
     border-bottom: 2px solid $bg-first
     background-color: #fff
 
@@ -12,19 +13,31 @@
     align-items: center
     min-height: 82px
 
+    +media($mobile-lg)
+        min-height: 56px
+
 .header__logo
     position: relative
 
-    & > a
-        position: absolute
-        top: 0
-        right: 0
-        bottom: 0
-        left: 0 
+    & img
+        width: 100%
+
+    +media($mobile-lg)
+        width: 100px
 
 .header__nav
     +media($mobile-lg)
+        position: fixed
+        top: 58px
+        right: 0
+        bottom: 0
+        left: 0
         display: none
+        padding-top: 26px
+        background-color: #fff
+
+.header__nav--fixed
+    display: block
 
 .header__links
     display: flex
@@ -36,9 +49,16 @@
     +media($tablet)
         font-size: 14px
 
+    +media($mobile-lg)
+        flex-direction: column
+        font-size: 24px
+
     & > li
         &:not(:last-child)
             margin-right: 20px
+
+        +media($mobile-lg)
+            margin-right: 0
 
         & > a
             display: block
@@ -50,8 +70,48 @@
             &:hover
                 color: $textcolor
 
+            +media($mobile-lg)
+                padding: 8px 24px
+                color: $textcolor
+                line-height: 1
+
 .header__hamburger
     display: none
 
     +media($mobile-lg)
         display: block
+        margin-right: -14px
+
+// Hamburger styles
+.hamburger-box
+    width: 24px
+
+.hamburger-inner
+    width: 24px
+    height: 2px
+    border-radius: 0
+    background-color: $second-text-color
+
+    &::before,
+    &::after
+        width: 24px
+        height: 2px
+        border-radius: 0
+        background-color: $second-text-color
+
+.hamburger--slider
+    .hamburger-inner
+        top: 8px
+
+        &::before
+            top: 6px
+
+        &::after
+            top: 12px
+
+    &.is-active
+        .hamburger-inner
+            transform: translate3d(0,6px,0) rotate(45deg)
+
+            &::after
+                transform: translate3d(0,-12px,0) rotate(-90deg)
