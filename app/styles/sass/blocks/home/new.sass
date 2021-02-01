@@ -3,6 +3,9 @@
     flex-wrap: wrap
     margin-bottom: 86px
 
+    +media($mobile-lg)
+        margin-bottom: 0
+
 .new__item
     flex-grow: 1
     flex-shrink: 1
@@ -11,6 +14,12 @@
 
     &:nth-child(even)
         margin-right: 0
+
+    +media($mobile-lg)
+        flex-basis: 100%
+        margin-right: 0
+        margin-bottom: 30px
+        font-size: 18px
 
 .new__link
     color: $textcolor
@@ -28,6 +37,9 @@
         display: block
         max-width: 622px
         width: 100%
+
+    +media($mobile-lg)
+        margin-bottom: 16px
 
 .new__rubric
     color: $accent

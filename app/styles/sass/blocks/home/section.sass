@@ -7,8 +7,14 @@
     +media($tablet)
         padding: 72px 0
 
+    +media($mobile-lg)
+        padding: 48px 0
+
 .section__slider
     position: relative
+
+    +media($mobile-lg)
+        margin: 0 -24px 0 0
     
 .section__rubric,
 .section__title
@@ -16,6 +22,9 @@
 
     +media($tablet)
         font-size: 32px
+
+    +media($mobile-lg)
+        font-size: $fontsize
     
 .section__accent
     color: $accent
@@ -36,6 +45,15 @@
         border-left: none
         border-bottom: none
         transform: rotate(45deg)
+
+        +media($mobile-lg)
+            width: 6px
+            height: 6px
+            margin-left: 7px
+            border-width: 1px
+
+    +media($mobile-lg)
+        font-size: 14px
 
 .section__slide
     display: flex
@@ -87,13 +105,22 @@
         +media($tablet)
             font-size: 20px
 
+        +media($mobile-lg)
+            font-size: $fontsize
+
 .section--directions
     .section__title
         margin-bottom: 47px
 
+        +media($mobile-lg)
+            margin-bottom: 24px
+
 .section--new
     .section__title
         margin-bottom: 63px
+
+        +media($mobile-lg)
+            margin-bottom: 30px
 
     .section__link
         display: block
@@ -105,13 +132,23 @@
         &::after
             border-color: $second-text-color
 
+        +media($mobile-lg)
+            text-align: left
+
 .section--technologies
     .section__title
         margin-bottom: 64px
 
+        +media($mobile-lg)
+            margin-bottom: 24px
+
 .section--career
     +media($tablet)
         padding-top: 97px
+
+    +media($mobile-lg)
+        padding-top: 40px
+        padding-bottom: 470px
 
     .section__rubric,
     .section__title,
@@ -124,12 +161,33 @@
     .section__title
         margin-bottom: 24px
 
+        +media($mobile-lg)
+            margin-bottom: 16px
+
     .section__content
         position: relative
+
+    .section__link
+        +media($mobile-lg)
+            display: none
+
+.section--cooperation
+    .section__title
+        margin-bottom: 64px
+        color: $second-accent
+
+        +media($mobile-lg)
+            margin-bottom: 24px
+
+    +media($mobile-lg)
+        padding-top: 61px
 
 .section--ad
     .section__title
         margin-bottom: 24px
+
+        +media($mobile-lg)
+            margin-bottom: 16px
 
     .section__banner
         display: block
@@ -137,6 +195,12 @@
 
         & > img
             width: 100%
+
+            +media($mobile-lg)
+                position: relative
+                left: 50%
+                width: unset
+                transform: translateX(-50%)
 
 .section--dark
     background-color: $bg-second
@@ -149,7 +213,3 @@
 
     .section__rubric
         color: #fff
-
-    .section__title
-        margin-bottom: 64px
-        color: $second-accent

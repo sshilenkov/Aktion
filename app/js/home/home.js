@@ -22,11 +22,20 @@ export default class Home {
 
         const slider = new Swiper(className, {
             slidesPerView: 3,
-            spaceBetween: 24,
             navigation: {
                 nextEl: className + '__next',
                 prevEl: className + '__prev',
             },
+            breakpoints: {
+                320: {
+                    slidesPerView: 'auto',
+                    spaceBetween: 17,
+                },
+                790: {
+                    slidesPerView: 3,
+                    spaceBetween: 24,
+                }
+            }
         });
     }
 }

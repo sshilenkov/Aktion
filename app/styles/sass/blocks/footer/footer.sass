@@ -11,8 +11,16 @@
     justify-content: space-between
     align-items: flex-start
 
+    +media($mobile-lg)
+        flex-direction: column
+
+        & > *
+            margin-bottom: 24px
+            order: 2
+
 .footer__logo
     position: relative
+    order: 1
 
     & > a
         position: absolute
@@ -33,6 +41,9 @@
 .footer__contacts
     flex-basis: 20%
     line-height: 1.7
+
+    +media($mobile-lg)
+        order: 1
 
 .footer__link
     color: $second-text-color
