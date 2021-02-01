@@ -9,9 +9,10 @@ $bg-second: #001324 // Some sections bg color
 $fontsize: 24px // Body Font Size
 $small-fontsize: 18px // Small font size
 $big-fontsize: 48px // Big font size
+$lineheight: 1.25 // Standart font line-height
+$big-lineheight: 1.35 // Small font line-height
 $textcolor: #111 // Text Color
 $second-text-color: #999 // Secondary text color
-$lineheight: 1.3 // Document Line Height
 $userfont: LabGrotesque, sans-serif // User Font Family
 $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font Family
 
@@ -106,6 +107,11 @@ body
 	min-width: 320px
 	position: relative
 	overflow-x: hidden
+	-webkit-font-smoothing: antialiased
 
 	+media($tablet)
 		font-size: 20px
+        line-height: $big-lineheight
+
+	+media($mobile-lg)
+		line-height: $lineheight

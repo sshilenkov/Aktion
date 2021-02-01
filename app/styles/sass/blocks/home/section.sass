@@ -19,12 +19,15 @@
 .section__rubric,
 .section__title
     font-size: $big-fontsize
+    line-height: $big-lineheight
 
     +media($tablet)
         font-size: 32px
+        line-height: $lineheight
 
     +media($mobile-lg)
         font-size: $fontsize
+        line-height: $lineheight
     
 .section__accent
     color: $accent
@@ -33,6 +36,13 @@
     padding: 10px 0
     color: $accent
     text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $textcolor
+
+        &::after
+            border-color: $textcolor
 
     &::after
         content: ''
@@ -44,6 +54,7 @@
         border: 2px solid $accent
         border-left: none
         border-bottom: none
+        transition: border-color .3s
         transform: rotate(45deg)
 
         +media($mobile-lg)
@@ -54,6 +65,7 @@
 
     +media($mobile-lg)
         font-size: 14px
+        line-height: $big-lineheight
 
 .section__slide
     display: flex
@@ -101,12 +113,15 @@
     .section__rubric,
     .section__title
         font-size: $fontsize
+        line-height: $lineheight
 
         +media($tablet)
             font-size: 20px
+            line-height: $big-lineheight
 
         +media($mobile-lg)
             font-size: $fontsize
+            line-height: $lineheight
 
 .section--directions
     .section__title
@@ -128,6 +143,12 @@
         margin: 0 auto
         color: $second-text-color
         text-align: center
+
+        &:hover
+            color: $accent
+
+            &::after
+                border-color: $accent
 
         &::after
             border-color: $second-text-color

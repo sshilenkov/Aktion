@@ -15,6 +15,15 @@
     &:nth-child(even)
         margin-right: 0
 
+    &:nth-child(-n+2)
+        margin-bottom: 96px
+
+        +media($tablet)
+            margin-bottom: 64px
+
+        +media($mobile-lg)
+            margin-bottom: 0
+
     +media($mobile-lg)
         flex-basis: 100%
         margin-right: 0
