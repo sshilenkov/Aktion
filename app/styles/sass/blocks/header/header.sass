@@ -1,5 +1,10 @@
 .header
+    position: fixed
+    top: 0
+    right: 0
+    left: 0
     border-bottom: 2px solid $bg-first
+    background-color: #fff
 
 .header__holder
     display: flex
@@ -16,6 +21,10 @@
         right: 0
         bottom: 0
         left: 0 
+
+.header__nav
+    +media($mobile-lg)
+        display: none
 
 .header__links
     display: flex
@@ -40,3 +49,9 @@
 
             &:hover
                 color: $textcolor
+
+.header__hamburger
+    display: none
+
+    +media($mobile-lg)
+        display: block
