@@ -1,10 +1,13 @@
 .directions
+    position: relative
     display: flex
     flex-wrap: wrap
     max-width: 900px
+    overflow: hidden
 
     +media($mobile-lg)
         flex-direction: column
+        flex-wrap: nowrap
 
 .directions__item
     flex: 0 0 33.33%
@@ -12,6 +15,9 @@
     align-items: center
     margin-bottom: 16px
     font-size: 0
+
+    +media($mobile-lg)
+        flex-basis: auto
 
     & > a
         color: $textcolor
@@ -26,6 +32,7 @@
         +media($tablet)
             font-size: 20px
             line-height: $big-lineheight
+
 
 .directions__icon
     display: inline-block
