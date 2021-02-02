@@ -1,6 +1,6 @@
 import Swiper, { Navigation } from 'swiper';
 import { debounce } from 'debounce';
-import lax from 'lax.js';
+import Lax from 'lax.js';
 
 export default class Home {
     constructor(root) {
@@ -11,7 +11,7 @@ export default class Home {
         const toggler = root.getElementsByClassName('section__toggler')[0];
         this.directionsToggler(directionsBlock, toggler);
 
-        this.initLax(root);
+        this.initLax();
 
         const obj = document.getElementsByClassName('results')[0];
         obj.onload = function() {
@@ -24,25 +24,48 @@ export default class Home {
         }
     }
 
-    initLax(root) {
-        lax.init();
-        lax.addDriver('scrollY', () => window.scrollY);
+    initLax() {
+        Lax.init();
+        Lax.addDriver('scrollY', () => window.scrollY);
 
-        const sectionsList = root.getElementsByClassName('section');
-
-        lax.addElements('.section, .section__content, .footer', {
+        Lax.addElements('.section, .section__content', {
             scrollY: {
                 opacity: [
                     ["elInY - 600", "elInY - 300"],
-                    [0, 1],
+                    {
+                        1144: [1, 1],
+                        1400: [0, 1],
+                    }
                 ],
                 translateY: [
                     ["elInY - 600", "elInY - 300"],
-                    [100, 0],
+                    {
+                        1144: [0, 0],
+                        1400: [100, 0],
+                    }
                 ]
             }
+        });
 
-        })
+        window.onresize = () => {
+            console.log('resize')
+            Lax.onWindowResize();
+            Lax.removeDriver('scrollY');
+            Lax.addDriver('scrollY', () => window.scrollY);
+            Lax.removeElements('.section, .section__content');
+            Lax.addElements('.section, .section__content', {
+                scrollY: {
+                    opacity: [
+                        ["elInY - 600", "elInY - 300"],
+                        [0, 1],
+                    ],
+                    translateY: [
+                        ["elInY - 600", "elInY - 300"],
+                        [100, 0],
+                    ]
+                }
+            });
+        };
     }
 
     initSlider(className) {
