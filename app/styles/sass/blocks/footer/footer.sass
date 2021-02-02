@@ -22,7 +22,9 @@
 
 .footer__logo
     position: relative
-    order: 1
+
+    +media($mobile-lg)
+        order: 1
 
     & > a
         position: absolute
