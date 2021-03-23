@@ -66,6 +66,9 @@ main.history
     border-style: double
     border-width: 0px 0px 0px 10px
 
+    +media($mobile-lg)
+        left: 30px
+
     &.paused 
         border-style: solid
         border-width: 6px 0px 6px 10px
@@ -148,6 +151,14 @@ main.history
     &.js-content-animation
         opacity: 1
         transform: translateY(-50%)
+
+.history__content--alt
+    right: 6%
+    left: unset
+
+    +media($mobile-sm)
+        right: unset
+        left: 100px
 
 .history__rubric
     display: flex

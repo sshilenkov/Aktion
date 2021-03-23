@@ -247,11 +247,13 @@ class History {
             slides.forEach((slide, idx) => {
                 const content = slide.querySelector('.history__content');
 
-                content.classList.remove('js-content-animation');
-                content.style.transitionDelay = '0.3s'
-                
-                if (idx === activeIndex) {
-                    content.classList.add('js-content-animation');
+                if (content) {
+                    content.classList.remove('js-content-animation');
+                    content.style.transitionDelay = '0.3s'
+                    
+                    if (idx === activeIndex) {
+                        content.classList.add('js-content-animation');
+                    }
                 }
             })
 
