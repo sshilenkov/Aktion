@@ -13,9 +13,14 @@
     max-width: 570px
     text-align: center
 
+    +media($tablet)
+        max-width: 490px
+        min-width: 410px
+
     +media($mobile-lg)
         width: 100%
         max-width: 320px
+        min-width: unset
 
 .people__title
     margin-bottom: 32px
@@ -23,6 +28,7 @@
     line-height: 1.1
 
     +media($tablet)
+        font-size: 56px
         margin-bottom: 26px
 
     +media($mobile-lg)
