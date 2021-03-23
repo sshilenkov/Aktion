@@ -1,0 +1,102 @@
+.our-work__tabs
+    display: flex
+    margin-bottom: 72px
+
+    +media($tablet)
+        margin-bottom: 48px
+
+    +media($mobile-lg)
+        margin-right: -24px
+        margin-bottom: 30px
+        white-space: nowrap
+        overflow-x: scroll
+
+
+.our-work__item
+    margin-right: 32px
+
+    +media($tablet)
+        margin-right: 28px
+
+    +media($mobile-lg)
+        margin-right: 24px
+
+    & > a
+        color: $second-text-color
+        font-size: $big-fontsize
+        text-decoration: none
+        outline: none
+        transition: color .3s
+
+        &:hover
+            color: $accent
+
+        &[aria-selected="true"]
+            color: $textcolor
+
+        +media($tablet)
+            font-size: 32px
+
+        +media($mobile-lg)
+            font-size: 24px
+
+.our-work__video
+    width: 100%
+    height: 710px
+    margin-bottom: 70px
+
+    +media($tablet)
+        height: 51vw
+        margin-bottom: 48px
+
+    +media($mobile-lg)
+        width: calc(100% + 48px)
+        height: 67vw
+        margin-right: -24px
+        margin-bottom: 38px
+        margin-left: -24px
+
+.our-work__description
+    display: flex
+    justify-content: space-between
+    line-height: 1.65
+
+    +media($tablet)
+        font-size: $small-fontsize
+
+    +media($mobile-lg)
+        flex-direction: column
+
+    & p:not(:last-child)
+        margin-bottom: 24px
+
+        +media($tablet)
+            margin-bottom: 15px
+
+.our-work__author
+    flex-basis: 24%
+
+    +media($mobile-lg)
+        margin-bottom: 16px
+
+.our-work__email
+    color: $accent
+    text-decoration: none
+
+.our-work__advantages
+    flex-basis: 62.5%
+
+.our-work__text
+    margin-bottom: 50px
+    color: $second-text-color
+
+    +media($mobile-lg)
+        margin-bottom: 0
+
+.our-work__about
+    +media($mobile-lg)
+        display: none
+    
+.our-work__articles
+    display: flex
+    justify-content: space-between

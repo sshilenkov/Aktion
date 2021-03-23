@@ -1,0 +1,77 @@
+.values
+    display: flex
+    margin-bottom: 72px
+
+    +media($tablet)
+        margin-bottom: 64px
+
+    +media($mobile-lg)
+        flex-direction: column
+        margin-bottom: 35px
+
+.values__item
+    flex-basis: 22.5%
+
+    +media($mobile-lg)
+        max-width: 73%
+
+    &:not(:last-child)
+        margin-right: 10%
+
+        +media($mobile-lg)
+            margin-right: 0
+            margin-bottom: 55px
+
+    &:nth-child(2)
+        margin-top: 185px
+
+        +media($tablet)
+            margin-top: 120px
+
+        +media($mobile-lg)
+            align-self: flex-end
+            margin-top: 0
+
+    &:nth-child(3)
+        margin-top: -113px
+
+        +media($tablet)
+            margin-top: -117px
+
+        +media($mobile-lg)
+            margin-top: 0
+
+.values__picture
+    margin-bottom: 25px
+
+    +media($tablet)
+        margin-bottom: 9px
+
+    +media($mobile-lg)
+        margin-bottom: 25px
+
+    & > img
+        display: block
+        width: 100%
+
+.values__title
+    margin-bottom: 8px
+
+    +media($tablet)
+        margin-bottom: 6px
+
+    +media($mobile-lg)
+        margin-bottom: 1px
+
+.values__description
+    color: $second-text-color
+    font-size: $small-fontsize
+    line-height: 1.44
+
+    +media($tablet)
+        font-size: 14px
+        line-height: 1.35
+
+    +media($mobile-lg)
+        font-size: $small-fontsize
+        line-height: 1.44

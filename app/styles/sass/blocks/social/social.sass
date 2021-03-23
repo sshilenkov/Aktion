@@ -1,0 +1,30 @@
+.social
+    display: flex
+
+    +media($tablet)
+        margin-top: 16px
+
+    +media($mobile-lg)
+        margin-top: 10px
+
+    & > a
+        width: 48px
+        height: 48px
+
+        &:not(:last-child)
+            margin-right: 10px
+
+        &:hover
+            & path:first-child
+                fill: $accent
+
+        +media($tablet)
+            width: 32px
+            height: 32px
+
+        & svg
+            width: 100%
+            height: 100%
+
+        & path
+            transition: fill .3s

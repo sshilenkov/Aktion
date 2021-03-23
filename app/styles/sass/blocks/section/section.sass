@@ -1,0 +1,471 @@
+.section
+    padding: 128px 0
+
+    &:nth-child(even):not(.section--dark)
+        background-color: $bg-first
+
+    +media($tablet)
+        padding: 72px 0
+
+    +media($mobile-lg)
+        padding: 48px 0
+
+.section__title-link
+    color: $textcolor
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $accent
+    
+.section__rubric,
+.section__title
+    font-size: $big-fontsize
+    line-height: $big-lineheight
+
+    +media($tablet)
+        font-size: 32px
+        line-height: $lineheight
+
+    +media($mobile-lg)
+        font-size: $fontsize
+        line-height: $lineheight
+    
+.section__accent
+    color: $accent
+
+.section__link
+    padding: 10px 0
+    color: $accent
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $textcolor
+
+        &::after
+            border-color: $textcolor
+
+    +media($mobile-lg)
+        font-size: 14px
+        line-height: $big-lineheight
+
+    &::after
+        content: ''
+        position: relative
+        display: inline-block
+        width: 11px
+        height: 11px
+        margin-left: 15px
+        border: 2px solid $accent
+        border-left: none
+        border-bottom: none
+        transition: border-color .3s
+        transform: rotate(45deg)
+
+        +media($mobile-lg)
+            width: 6px
+            height: 6px
+            margin-left: 7px
+            border-width: 1px
+
+.section__slider
+    position: relative
+
+    +media($mobile-lg)
+        margin: 0 -24px 0 0
+
+.section__slide
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    min-height: 408px
+    padding: 32px
+    box-sizing: border-box
+    background-color: #fff
+
+.section__prev,
+.section__next
+    position: absolute
+    top: 50%
+    right: 0
+    z-index: 3
+    width: 64px
+    height: 64px
+    background-color: $accent
+    background-image: url('/images/dist/arrow.svg')
+    background-repeat: no-repeat
+    background-position: 55% 50%
+    border-radius: 50%
+    transform: translate(50%, -50%)
+    transition: all .3s
+
+    &:hover
+        cursor: pointer
+
+    &.swiper-button-disabled
+        opacity: 0
+        visibility: hidden
+
+    +media($tablet)
+        display: none
+
+.section__prev
+    left: 0
+    transform: translate(-50%, -50%) rotate(180deg)
+
+.section__toggler
+    display: none
+    color: $accent
+
+.section--dark
+    background-color: $bg-second
+    background-image: url('/images/dist/eagle.svg')
+    background-repeat: no-repeat
+    background-size: cover
+
+    .section__slide
+        background-color: $second-accent-dark
+
+    .section__rubric
+        color: #fff
+
+    .section__title
+        margin-bottom: 64px
+        color: $second-accent
+
+        +media($mobile-lg)
+            margin-bottom: 24px
+
+.section__date
+    margin-bottom: 46px
+    font-size: $small-fontsize
+
+    +media($mobile-lg)
+        margin-bottom: 28px
+        font-size: 14px
+
+// Home page sections
+.section--results
+    padding: 32px 0 0
+
+    .section__rubric,
+    .section__title
+        font-size: $fontsize
+        line-height: $lineheight
+
+        +media($tablet)
+            font-size: 20px
+            line-height: $big-lineheight
+
+        +media($mobile-lg)
+            font-size: $fontsize
+            line-height: $lineheight
+
+.section--directions
+    .section__title
+        margin-bottom: 47px
+
+        +media($mobile-lg)
+            margin-bottom: 24px
+
+.section--news
+    .section__title
+        margin-bottom: 63px
+
+        +media($mobile-lg)
+            margin-bottom: 30px
+
+    .section__link
+        display: block
+        max-width: 300px
+        margin: 0 auto
+        color: $second-text-color
+        text-align: center
+
+        +media($mobile-lg)
+            margin: 0
+            text-align: left
+
+        &:hover
+            color: $accent
+
+            &::after
+                border-color: $accent
+
+        &::after
+            border-color: $second-text-color
+
+.section--technologies
+    .section__title
+        margin-bottom: 64px
+
+        +media($mobile-lg)
+            margin-bottom: 24px
+
+.section--career
+    position: relative
+    z-index: 5
+
+    +media($tablet)
+        padding-top: 97px
+
+    +media($mobile-lg)
+        padding-top: 40px
+        padding-bottom: 470px
+
+    .section__rubric,
+    .section__title,
+    .section__content
+        max-width: 640px
+
+        +media($tablet)
+            max-width: 420px
+
+        +media($mobile-lg)
+            max-width: unset
+
+    .section__title
+        margin-bottom: 24px
+
+        +media($mobile-lg)
+            margin-bottom: 16px
+
+    .section__content
+        position: relative
+
+    .section__link
+        +media($mobile-lg)
+            display: none
+
+.section--cooperation
+    +media($mobile-lg)
+        padding-top: 61px
+
+.section--ad
+    .section__title
+        margin-bottom: 24px
+
+        +media($mobile-lg)
+            margin-bottom: 16px
+
+    .section__banner
+        display: block
+        margin-top: 60px
+
+        & > img
+            width: 100%
+
+            +media($mobile-lg)
+                position: relative
+                left: 50%
+                width: unset
+                max-height: 170px
+                transform: translateX(-50%)
+
+// Home page sections end
+
+// Career page sections
+.section--people
+    padding: 0
+    overflow: hidden
+
+    .section__content
+        height: calc(100vh - 82px)
+
+        +media($mobile-lg)
+            height: calc(100vh - 58px)
+
+.section--lead
+    background-color: #fff !important
+
+    .section__rubric,
+    .section__title
+        +media($mobile-lg)
+            display: inline
+            font-size: 20px
+            line-height: 1.35
+
+.section--values
+    padding-bottom: 225px
+
+    +media($tablet)
+        padding-bottom: 141px
+
+    +media($mobile-lg)
+        padding-bottom: 78px
+
+    .section__rubric,
+    .section__title
+        max-width: 63%
+
+        +media($mobile-lg)
+            max-width: 100%
+            font-size: 20px
+            line-height: 1.35
+
+    .section__title
+        margin-bottom: 72px
+
+        +media($tablet)
+            margin-bottom: 52px
+
+        +media($mobile-lg)
+            margin-bottom: 40px
+
+    .section__title--wide
+        max-width: 85%
+        margin-bottom: 0
+
+        +media($mobile-lg)
+            max-width: 100%
+            margin-bottom: 59px
+
+.section--working-conditions
+    padding-bottom: 185px
+
+    +media($tablet)
+        padding-top: 128px
+        padding-bottom: 9.5%
+
+    +media($mobile-lg)
+        padding: 73px 0 109px
+
+    .section__rubric,
+    .section__title
+        max-width: 500px
+
+        +media($tablet)
+            max-width: 47%
+
+        +media($mobile-lg)
+            max-width: 100%
+
+    .section__title
+        margin-bottom: 45px
+
+        +media($mobile-lg)
+            margin-bottom: 32px
+
+    .section__img
+        position: absolute
+
+.section--office
+    padding-bottom: 142px
+    background-image: none
+
+    +media($tablet)
+        padding-top: 128px
+
+    +media($mobile-lg)
+        padding: 28px 0 79px
+
+    .section__title
+        +media($mobile-lg)
+            margin-bottom: 32px
+
+.section--our-work
+    background-color: #fff !important
+
+    +media($tablet)
+        padding: 128px 0
+
+    +media($mobile-lg)
+        padding: 48px 0
+
+.section--vacancies
+    background-color: $bg-first
+
+    +media($tablet)
+        padding: 128px 0
+
+    +media($mobile-lg)
+        padding: 48px 0
+
+    .section__rubric
+        margin-bottom: 15px
+
+        +media($mobile-lg)
+            margin-bottom: 8px
+
+// Career page sections end
+
+// Contacts page sections start
+
+.section--contacts
+    padding: 24px 0 124px
+
+    +media($tablet)
+        padding: 32px 0 100px
+
+    +media($mobile-lg)
+        padding-bottom: 80px
+
+    .section__rubric
+        margin-bottom: 32px
+        font-size: $fontsize
+
+        +media($tablet)
+            margin-bottom: 24px
+            font-size: 20px
+
+        +media($mobile-lg)
+            margin-bottom: 16px
+            font-size: 24px
+
+    .section__title
+        max-width: 75%
+        margin-bottom: 42px
+        font-size: 94px
+        line-height: 1
+
+        +media($desktop-sm)
+            font-size: 82px
+
+        +media($tablet)
+            margin-bottom: 34px
+            font-size: 54px
+
+        +media($mobile-lg)
+            margin-bottom: 20px
+            font-size: 36px
+
+// Contacts page sections end
+
+// News page sections start
+
+.section--news-page
+    padding-top: 32px
+    padding-bottom: 90px
+
+    +media($desktop-sm)
+        padding-bottom: 60px
+
+    +media($mobile-lg)
+        padding-top: 36px
+        padding-bottom: 28px
+
+    .section__title
+        margin-bottom: 65px
+
+        +media($desktop-sm)
+            margin-bottom: 46px
+
+        +media($tablet)
+            margin-bottom: 32px
+
+        +media($mobile-lg)
+            margin-bottom: 28px
+
+.section--one-news
+    padding-top: 32px
+    padding-bottom: 196px
+
+    +media($tablet)
+        padding-bottom: 136px
+
+    +media($mobile-lg)
+        padding-top: 36px
+        padding-bottom: 48px
+
+// News page sections end

@@ -1,0 +1,97 @@
+.office
+    display: flex
+    justify-content: space-between
+
+    +media($tablet)
+        flex-direction: column
+
+.office__column
+    flex-basis: 49%
+    display: flex
+    flex-direction: column
+
+    // Стили для первой вертикальной карточки
+    &:first-child
+        +media($tablet)
+            margin-bottom: 24px
+
+        +media($mobile-lg)
+            margin-bottom: 32px
+
+        & > .office__card:first-child
+            flex-grow: 1
+            flex-direction: column
+
+            +media($tablet)
+                flex-direction: row
+
+            +media($mobile-lg)
+                flex-direction: column
+
+            & .office__title,
+            & .office__description
+                max-width: 65%
+
+                +media($mobile-lg)
+                    max-width: 100%
+
+            & > .office__picture
+                flex-basis: unset
+
+                +media($tablet)
+                    flex-basis: 46%
+
+.office__card
+    display: flex
+    background-color: $second-accent-dark
+
+    +media($mobile-lg)
+        flex-direction: column
+
+    &:not(:last-child)
+        margin-bottom: 24px
+
+        +media($mobile-lg)
+            margin-bottom: 32px
+
+.office__advantages
+    flex-grow: 1
+    padding: 32px
+
+    +media($mobile-lg)
+        padding: 24px 24px 60px
+
+.office__title
+    margin-bottom: 8px
+    color: $bg-first
+
+.office__description
+    color: $second-accent
+    font-size: $small-fontsize
+    line-height: 1.44
+
+    +media($mobile-lg)
+        font-size: 14px
+        line-height: 1.35
+
+.office__picture
+    position: relative
+    flex-basis: 46%
+    flex-shrink: 0
+    padding-bottom: 46%
+
+    +media($tablet)
+        padding-bottom: 40%
+
+    +media($mobile-lg)
+        padding-bottom: 65%
+
+    & > img
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover

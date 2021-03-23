@@ -1,0 +1,89 @@
+.one-news
+    max-width: 760px
+
+    +media($tablet)
+        max-width: 605px
+        font-size: 20px
+
+    +media($mobile-lg)
+        max-width: 100%
+        font-size: 16px
+
+.one-news__block
+    margin-bottom: 32px
+
+    +media($desktop-sm)
+        width: 100%
+
+    +media($mobile-lg)
+        margin-bottom: 16px
+    
+.one-news__title
+    font-size: $big-fontsize
+
+    +media($tablet)
+        font-size: 32px
+
+    +media($mobile-lg)
+        font-size: $fontsize
+
+.one-news__intro
+    color: $second-text-color
+
+.one-news__main-illustration
+    display: block
+
+.one-news__illustration-block
+    display: flex
+    justify-content: space-between
+
+.one-news__secondary-illustration
+    &:not(:last-child)
+        margin-right: 24px
+
+    +media($desktop-sm)
+        width: 49%
+
+        &:not(:last-child)
+            margin-right: 0
+
+.one-news__socials
+    margin: 60px 0 132px
+
+    +media($tablet)
+        margin: 38px 0 121px
+
+    +media($mobile-lg)
+        margin: 34px 0 81px
+
+.one-news__share
+    margin-bottom: 22px
+    font-size: $small-fontsize
+
+    +media($tablet)
+        font-size: 16px
+
+    +media($mobile-lg)
+        margin-bottom: 17px
+        font-size: 12px
+
+.next-news
+    padding-top: 46px
+    border-top: 1px solid #000
+
+    +media($tablet)
+        margin-top: 32px
+
+    +media($mobile-lg)
+        padding-top: 34px
+
+.next-news__title
+    margin-bottom: 46px
+    font-size: 50px
+
+    +media($tablet)
+        margin-bottom: 32px
+        font-size: 32px
+
+    +media($mobile-lg)
+        font-size: $fontsize

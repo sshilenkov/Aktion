@@ -1,0 +1,129 @@
+.vacancies
+    display: flex
+    justify-content: space-between
+
+    +media($mobile-lg)
+        flex-direction: column
+
+.vacancies__head
+    flex-basis: 24%
+
+    +media($mobile-lg)
+        margin-bottom: 30px
+
+.vacancies__description
+    color: $second-text-color
+    font-size: $small-fontsize
+
+    +media($tablet)
+        font-size: 14px
+
+.vacancies__backward
+    display: none
+
+    &:hover
+        cursor: pointer
+
+    &::before
+        content: ''
+        display: inline-block
+        width: 9px
+        height: 13px
+        margin-right: 10px
+        background-image: url('/images/dist/arrow-backward.svg')
+        background-size: contain
+        background-position: center
+        background-repeat: no-repeat
+
+        +media($tablet)
+            width: 8px
+            height: 10px
+
+.vacancies__content
+    flex-basis: 62.5%
+    font-size: $big-fontsize
+
+    +media($tablet)
+        font-size: 32px
+
+    +media($mobile-lg)
+        font-size: 20px
+
+.vacancies__list
+    & > li:not(.vacancies__department)
+        display: none
+        margin-bottom: 31px
+        padding-bottom: 31px
+
+        +media($mobile-lg)
+            margin-bottom: 21px
+            padding-bottom: 21px
+
+        &:nth-child(2)
+            margin-top: 42px
+
+        &:not(:last-child)
+            border-bottom: 1px solid #DDD
+
+.vacancies__list--other
+    & > li:first-child
+        margin-bottom: 0
+
+    & .vacancies__department
+        border: none
+
+.vacancies__list--full
+    & > li:not(.vacancies__department)
+        display: block !important
+
+    & .vacancies__department
+        &:hover
+            color: $textcolor
+            cursor: default
+
+            & .vacancies__counter
+                color: $second-text-color
+
+.vacancies__department
+    display: flex
+    justify-content: space-between
+    margin-bottom: 16px
+    padding-bottom: 16px
+    border-bottom: 1px solid #DDD
+    transition: color .3s
+
+    &:hover
+        color: $accent
+        cursor: pointer
+
+        & .vacancies__counter
+            color: $accent
+
+.vacancies__counter
+    color: $second-text-color
+    transition: color .3s
+
+.vacancies__header
+    display: block
+    margin-bottom: 8px
+    color: $textcolor
+    font-size: $fontsize
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $accent
+
+    +media($tablet)
+        margin-bottom: 0
+        font-size: 20px
+
+    +media($mobile-lg)
+        font-size: $small-fontsize
+
+.vacancies__city
+    color: $second-text-color
+    font-size: $small-fontsize
+
+    +media($tablet)
+        font-size: 14px

@@ -1,0 +1,384 @@
+$animation-duration: 2.5s
+    
+main.history
+    position: relative
+    padding: 0
+    background-color: #001324
+
+    & .swiper-pagination-bullets
+        right: unset
+        left: 4%
+    
+.history__years
+    z-index: 92
+    display: flex
+    flex-direction: column
+    align-items: center
+    width: unset !important
+
+    +media($mobile-lg)
+        left: 20px !important
+
+.history__year
+    width: unset
+    height: unset
+    margin: 0 !important
+    padding: 16px 0
+    background: unset
+    color: #fff
+    font-size: 16px
+    transform: scale(1) !important
+    transition: all 1s !important
+
+    +media($tablet)
+        font-size: 14px
+
+    &.swiper-pagination-bullet-active
+        opacity: 1 !important
+        color: #FF6854
+
+.history__video
+    position: absolute
+    z-index: -1
+    display: block
+    width: 100vw
+    height: 100vh
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+
+.history__play
+    position: absolute
+    bottom: 6%
+    left: 4%
+    z-index: 9
+    width: 0
+    height: 14px
+    box-sizing: border-box
+    border: 0
+    border-color: transparent transparent transparent #fff
+    background: transparent
+    transition: 100ms all ease
+    cursor: pointer
+    outline: none
+    // play state
+    border-style: double
+    border-width: 0px 0px 0px 10px
+
+    &.paused 
+        border-style: solid
+        border-width: 6px 0px 6px 10px
+        border-radius: 3px
+
+.history__title
+    position: absolute
+    top: 20%
+    left: 16%
+    z-index: 9
+    color: #fff
+    line-height: 1
+    opacity: 0
+
+    +media($mobile-lg)
+        left: 100px
+
+    &.js-animation-start
+        animation-name: title
+        animation-duration: $animation-duration
+        animation-delay: .5s
+        animation-timing-function: cubic-bezier(0, 0.98, 1, 1)
+
+    & > h4
+        color: rgba(153, 153, 153, 0.7)
+        font-size: 22px
+
+        +media($mobile-lg)
+            font-size: 18px
+
+        +media($mobile-sm)
+            font-size: 10px
+
+    & > h3
+        font-size: 136px
+
+        +media($mobile-lg)
+            font-size: 84px
+
+@keyframes title
+    0%
+        top: 100%
+        opacity: 0
+
+    10%
+        top: 45%
+        opacity: 1
+        
+    95%
+        opacity: 1
+        
+    100%
+        top: 20%
+        opacity: 0
+
+.history__content
+    position: absolute
+    top: 50%
+    left: 16%
+    z-index: 2
+    max-width: 520px
+    color: #fff
+    font-weight: 400
+    opacity: 0
+    transform: translateY(0)
+    transition: all .5s
+
+    +media($tablet)
+        max-width: 450px
+
+    +media($mobile-lg)
+        top: unset
+        bottom: 0
+        left: 100px
+        max-width: 320px
+
+    +media($mobile-sm)
+        max-width: 215px
+
+    &.js-content-animation
+        opacity: 1
+        transform: translateY(-50%)
+
+.history__rubric
+    display: flex
+    align-items: center
+    margin-bottom: 16px
+    font-size: 10px
+    letter-spacing: .2em
+
+.history__dot
+    width: 8px
+    height: 8px
+    margin-right: 8px
+    border-radius: 50%
+    background-color: $accent
+
+.history__achievement
+    font-size: 34px
+    line-height: 1.3
+
+    +media($tablet)
+        font-size: 30px
+
+    +media($mobile-lg)
+        font-size: 20px
+
+    +media($mobile-sm)
+        font-size: 14px
+
+// Swiper
+.main-slider
+    position: relative
+    height: 100vh
+
+    &::before
+        content: ''
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 10%
+        z-index: 99
+        width: 1px
+        background-color: #fff
+        opacity: 0.05
+
+        +media($mobile-lg)
+            left: 70px
+
+.main-slider__slide
+    position: relative
+
+.main-slider__slide.swiper-slide-active
+    & .second-slider__progress
+        display: block
+
+.second-slider__slide
+    position: relative
+    height: 100vh
+    transition: transform .3s linear
+    animation-duration: $animation-duration
+    animation-timing-function: linear
+
+    &.js-animation-start::before
+        content: ''
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        z-index: 2
+        background: linear-gradient(90deg, #111111 -3.58%, rgba(17, 17, 17, 0.748299) 30.5%, rgba(17, 17, 17, 0.15) 73.15%)
+        animation-duration: $animation-duration
+        animation-timing-function: linear
+        animation-name: blackout
+
+    &:first-child
+        &.js-animation-start
+            animation-name: startAnimationMainSlide
+
+    &:nth-child(2)
+        &.js-animation-start
+            animation-delay: .3s
+            animation-name: startAnimationSecondSlide
+
+    &:nth-child(3)
+        &.js-animation-start
+            animation-name: startAnimationThirdSlide
+
+
+    &:nth-child(4)
+        &.js-animation-start
+            animation-name: startAnimationFourthSlide
+
+    & > img
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+@keyframes blackout
+    0%
+        opacity: 0
+
+    80%
+        opacity: 0
+        
+    100%
+        opacity: 1
+
+@keyframes startAnimationMainSlide
+    0%
+        transform: scale(.4) translate(45%, 0%)
+        opacity: 0
+
+    30%
+        opacity: 1
+
+    80%
+        transform: scale(.4) translate(45%, -55%)
+
+    95%
+        transform: translate(0%, 0%)
+        
+    100%
+        transform: scale(1)
+
+@keyframes startAnimationSecondSlide
+    0%
+        z-index: -1
+        opacity: 0
+        transform: translate(-119%, -15%) scale(0.3)
+
+    10%
+        z-index: -1
+        opacity: .2
+        transform: translate(-119%, -40%) scale(0.3)
+        
+    100%
+        z-index: -1
+        opacity: .2
+        transform: translate(-119%, -60%) scale(0.3)
+           
+@keyframes startAnimationThirdSlide
+    0%
+        z-index: -1
+        opacity: 0
+        transform: translate(-210%, 45%) scale(0.3)
+
+    10%
+        z-index: -1
+        opacity: 0.15
+        transform: translate(-210%, 15%) scale(0.3)
+        
+    100%
+        z-index: -1
+        opacity: 0.15
+        transform: translate(-210%, -15%) scale(0.3)
+
+@keyframes startAnimationFourthSlide
+    0%
+        z-index: -1
+        opacity: 0
+        transform: translate(-300%, 60%) scale(.2)
+
+    10%
+        z-index: -1
+        opacity: 0.15
+        transform: translate(-300%, 45%) scale(.2)
+        
+    100%
+        z-index: -1
+        opacity: 0.15
+        transform: translate(-300%, 20%) scale(.2)
+
+.second-slider__progress
+    position: absolute
+    top: unset !important
+    bottom: 6% !important
+    left: 16% !important
+    z-index: 5
+    display: none
+    width: calc(100% - 16%) !important
+    height: 1px
+    background-color: rgba(255,255,255,0.25)
+    animation-duration: $animation-duration
+    animation-name: progress
+    animation-timing-function: linear
+
+    +media($mobile-lg)
+        left: 100px !important
+        width: calc(100% - 100px) !important
+
+.second-slider__item
+    position: absolute
+    left: 0
+    bottom: 0
+    width: 0%
+    height: 1px
+    background-color: transparent
+
+    &::before
+        content: ''
+        position: absolute
+        bottom: 0
+        left: 0
+        width: 2px
+        height: 3px
+        background-color: rgba(255,255,255,0.25)
+
+.second-slider__item--active
+    background-color: #fff
+
+    &::before
+        background-color: #fff
+
+@keyframes progress
+    0%
+        opacity: 0
+
+    95%
+        opacity: 0
+
+    100%
+        opacity: 1
+        
+@keyframes slideProgress
+    0%
+        width: 0%
+        
+    100%
+        width: 100%

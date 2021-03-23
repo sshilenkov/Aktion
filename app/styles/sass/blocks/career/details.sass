@@ -1,0 +1,37 @@
+.details
+    max-width: 150px
+    margin-top: 21%
+
+    +media($mobile-lg)
+        display: none
+        max-width: unset
+        margin-top: 0
+    
+.details--mobile
+    display: none
+
+    +media($mobile-lg)
+        display: block
+
+.details__title
+    margin-bottom: 8px
+
+.details__link
+    display: block
+    margin-bottom: 4px
+    color: $accent
+    font-size: $small-fontsize
+    line-height: 144%
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $textcolor
+
+    +media($tablet)
+        font-size: 14px
+        line-height: 1.35
+
+    +media($mobile-lg)
+        font-size: $small-fontsize
+        line-height: 144%
