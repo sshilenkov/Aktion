@@ -13,6 +13,7 @@ import Career from './career/career';
 import Contacts from './contacts/contacts';
 import News from './news/news';
 import History from './history/history';
+import Company from './company/company';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -33,6 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const history = document.querySelector('main.history');
 	history && new History(history);
+
+	const company = document.querySelector('main.company');
+	company && new Company(company);
 
 	const footer = document.querySelector('footer.footer');
 	footer && new Footer(footer);

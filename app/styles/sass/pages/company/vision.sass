@@ -1,0 +1,35 @@
+.vision
+    display: flex
+    color: $second-text-color
+    font-size: 16px
+    line-height: 1.7
+
+    +media($tablet)
+        font-size: 12px
+
+    +media($mobile-lg)
+        flex-direction: column
+        font-size: 14px
+
+.vision__col
+    flex-basis: 342px
+
+    +media($tablet)
+        flex-basis: 255px
+
+    +media($mobile-lg)
+        flex-basis: auto
+
+    &:first-child
+        margin-right: 24px
+
+        +media($mobile-lg)
+            margin-right: 0
+            margin-bottom: 24px
+
+.vision__description
+    &:not(:last-child)
+        margin-bottom: 16px
+
+        +media($mobile-lg)
+            margin-bottom: 0

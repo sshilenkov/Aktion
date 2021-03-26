@@ -1,42 +1,6 @@
-.contacts
-    display: flex
-    justify-content: space-between
-    max-width: 800px
-    font-size: 30px
-    line-height: 1.46
-
-    +media($tablet)
-        max-width: 550px
-        font-size: 20px
-
-    +media($mobile-lg)
-        display: flex
-        flex-direction: column
-        font-size: 16px
-
-.contacts__address
-    +media($mobile-lg)
-        margin-bottom: 14px
-
-.contacts__link
-    display: block
-    color: $textcolor
-    font-weight: bold
-    text-decoration: none
-    transition: color .3s
-    
-    &:hover
-        color: $accent
-
-.contacts__social
-    margin-top: 30px
-
-// Yandex.Map styles
-.ymap
-    position: relative
-
-.ymap-scroller
+.scroller
     position: absolute
+    top: 0
     z-index: 1
     display: flex
     justify-content: center
@@ -74,3 +38,16 @@
 
     & path
         transition: fill .3s
+
+.scroller--mission
+    top: -128px
+    width: 64px
+    height: 64px
+
+    +media($tablet)
+        top: -70px
+        width: 44px
+        height: 44px
+
+    +media($mobile-lg)
+        top: 320px

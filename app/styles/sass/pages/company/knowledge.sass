@@ -1,0 +1,56 @@
+.knowledge
+    display: flex
+
+    +media($mobile-lg)
+        display: none
+
+.knowledge__item
+    position: relative
+    width: 122px
+    margin-right: 7%
+    padding-top: 16px
+    font-size: $small-fontsize
+    line-height: 1.1
+
+    +media($tablet)
+        width: 95px
+        margin-right: 4%
+        font-size: 14px
+
+    &:hover
+        cursor: pointer
+
+        &::before
+            width: 100%
+            transition-delay: 0.02s
+
+        &::after
+            width: 0%
+            transition-delay: 0s
+
+    &::before,
+    &::after
+        content: ''
+        position: absolute
+        top: 0
+        display: block
+        height: 2px
+        background-color: #000
+        transition: width .4s linear
+
+    &::before
+        left: 0
+        width: 0%
+        background-color: $accent
+        transition-delay: 0s
+
+    &::after
+        right: 0
+        display: block
+        width: 100%
+        background-color: #000
+        transform: rotate(180deg)
+        transition-delay: 0.02s
+
+.knowledge__number
+    margin-bottom: 8px

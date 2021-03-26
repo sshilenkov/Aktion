@@ -21,7 +21,9 @@ class History {
         Swiper.use([Mousewheel, Pagination, Autoplay, EffectFade]);
 
         this.swiperMain = new Swiper(swiperContainerMain, {
-            mousewheel: true,
+            mousewheel: {
+                invert: true,
+            },
             initialSlide: slides.length,
             direction: 'vertical',
             pagination: {
@@ -43,9 +45,7 @@ class History {
                         const nestedSlider = item.querySelector('.second-slider');
 
                         const nestedSwiper = new Swiper(nestedSlider, {
-                            mousewheel: {
-                                invert: true,
-                            },
+                            mousewheel: true,
                             nested: true,
                             allowTouchMove: false,
                             effect: 'fade',

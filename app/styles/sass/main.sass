@@ -1,5 +1,6 @@
 @import config
 @import "blocks/**/*"
+@import "pages/**/*"
 @import "swiper-bundle.min.css"
 @import "hamburger.css"
 
@@ -10,13 +11,28 @@ main
     +media($mobile-lg)
         padding-top: 60px
 
+main.company
+    overflow: unset
+
 .container
-    max-width: 1336px
+    max-width: 1272px
     margin: 0 auto
     padding: 0 32px
 
     +media($mobile-lg)
         padding: 0 24px
+
+.container--mission
+    position: relative
+
+    +media($mobile-lg)
+        position: static
+
+.container--vision
+    position: relative
+
+    +media($mobile-lg)
+        position: static
 
 .fixed
     overflow: hidden

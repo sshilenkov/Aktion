@@ -145,6 +145,21 @@
         margin-bottom: 28px
         font-size: 14px
 
+.section__crossed-out
+    position: relative
+    display: inline-block
+
+    &::before
+        content: ''
+        position: absolute
+        top: 55%
+        left: -5%
+        z-index: -1
+        width: 110%
+        height: 4px
+        background-color: $accent
+
+
 // Home page sections
 .section--results
     padding: 32px 0 0
@@ -469,3 +484,266 @@
         padding-bottom: 48px
 
 // News page sections end
+
+// Company page start
+
+.section--knowledge
+    padding-top: 42px
+
+    +media($tablet)
+        padding: 32px 0 74px
+
+    +media($mobile-lg)
+        padding: 36px 0 34px
+
+    .section__rubric
+        margin-bottom: 20px
+        font-size: $fontsize
+
+        +media($tablet)
+            margin-bottom: 10px
+            font-size: 20px
+
+        +media($mobile-lg)
+            margin-bottom: 16px
+            font-size: $fontsize
+
+    .section__title
+        margin-bottom: 42px
+        font-size: 110px
+        line-height: 1.05
+
+        +media($tablet)
+            margin-bottom: 32px
+            font-size: 74px
+
+        +media($mobile-lg)
+            margin-bottom: 0
+            font-size: 33px
+
+.section--mission
+    +media($tablet)
+        padding: 70px 0 76px
+
+    +media($mobile-lg)
+        position: relative
+        padding: 368px 0 50px
+
+    .section__rubric,
+    .section__title
+        max-width: 420px
+        line-height: 1.2
+
+    .section__title
+        margin-bottom: 24px
+
+        +media($tablet)
+            margin-bottom: 18px
+
+    .section__img
+        position: absolute
+        top: -128px
+        bottom: -128px
+        left: 60%
+        padding-right: 50%
+        transition: all .3s linear
+
+        +media($tablet)
+            top: -70px
+            bottom: -76px
+            left: 550px
+            padding-right: 60%
+
+        +media($mobile-lg)
+            top: 0
+            right: 0
+            bottom: unset
+            left: 0
+            padding-right: 0
+            padding-bottom: 320px
+
+        & > img
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+.section--vision
+    +media($mobile-lg)
+        position: relative
+        padding: 191px 0 48px
+
+        &::before
+            content: ''
+            position: absolute
+            top: 48px
+            right: 0
+            bottom: 12%
+            left: 0
+            z-index: 2
+            background: linear-gradient(5.05deg,#fff 55.82%,rgba(255,255,255,.785801) 64.14%,rgba(255,255,255,.48) 71.92%,rgba(255,255,255,0) 86.87%)
+            
+
+    .section__img
+        position: absolute
+        top: -100px
+        right: calc(100% - 330px)
+        z-index: -1
+        width: 340px
+        height: 820px
+        transition: right .3s
+
+        +media(1244px)
+            right: calc(100% - 250px)
+
+        +media($tablet)
+            top: unset
+            right: unset
+            bottom: -72px
+            left: -35px
+            width: 228px
+            height: 552px
+
+        +media($mobile-lg)
+            top: -35px
+            right: -77px
+            bottom: unset
+            left: unset
+            z-index: 1
+
+        & > img
+            position: absolute
+            top: 0
+            right: 0
+            bottom: 0
+            left: 0
+            width: 100%
+            height: 100%
+            object-fit: cover
+
+    .section__rubric,
+    .section__title
+        width: 826px
+        margin-left: auto
+        line-height: 1.2
+
+        +media($tablet)
+            width: auto
+            margin-left: 180px
+
+        +media($mobile-lg)
+            position: relative
+            z-index: 2
+            margin-left: unset
+
+    .section__rubric
+        position: relative
+
+        &::before
+            content: ''
+            position: absolute
+            top: -83%
+            left: -3.2%
+            z-index: -1
+            width: 100px
+            height: 77px
+            background-image: url('/images/dist/quotes.svg')
+            background-repeat: no-repeat
+            background-position: center
+            background-size: cover
+
+            +media($tablet)
+                left: -5.2%
+                width: 69px
+                height: 51px
+
+            +media($mobile-lg)
+                top: -151px
+                left: -35px
+                width: 168px
+                height: 128px
+
+    .section__title
+        margin-bottom: 24px
+
+        +media($mobile-lg)
+            max-width: 81%
+            margin-bottom: 16px
+
+    .section__content
+        width: 826px
+        margin-left: auto
+
+        +media($tablet)
+            width: auto
+            margin-left: 180px
+
+        +media($mobile-lg)
+            position: relative
+            z-index: 2
+            margin-left: 0
+
+    .section__link
+        display: none
+        font-size: $small-fontsize
+
+        +media($tablet)
+            font-size: 14px
+
+        &:hover
+            &::after
+                border-top-color: transparent
+
+        &::after
+            width: 0
+            height: 0
+            margin-left: 10px
+            border-width: 9px
+            border-top-color: transparent
+            transform: rotate(315deg)
+
+.section--history
+    +media($tablet)
+        .section__link
+            font-size: $small-fontsize
+
+            &::after
+                width: 8px
+                height: 8px
+                margin-left: 8px
+
+    +media($mobile-lg)
+        padding: 48px 0 520px
+
+        .section__link
+            font-size: 14px
+
+            &::after
+                width: 7px
+                height: 7px
+
+    .section__rubric,
+    .section__title
+        line-height: 1.2
+
+    .section__title
+        margin-bottom: 24px
+
+        +media($tablet)
+            margin-bottom: 18px
+
+        +media($mobile-lg)
+            max-width: 70%
+
+    .section__content
+        position: relative
+        max-width: 570px
+
+        +media($tablet)
+            max-width: 420px
+
+// Company page end

@@ -1,0 +1,139 @@
+.about-history
+    margin-bottom: 24px
+
+    +media($mobile-lg)
+        margin-bottom: 12px
+    
+.about-history__description
+    min-height: 336px
+    color: $second-text-color
+    font-size: $fontsize
+
+    +media($tablet)
+        min-height: 231px
+        font-size: $small-fontsize
+
+    +media($mobile-lg)
+        min-height: unset
+        font-size: 14px
+
+.about-history__img
+    position: absolute
+    transition: all .3s
+
+    & > img
+        position: absolute
+        top: 0
+        right: 0
+        bottom: 0
+        left: 0
+        width: 100%
+        height: 100%
+        object-fit: cover
+
+.about-history__img--top
+    top: -290px
+    left: 780px
+    width: 250px
+    height: 155px
+
+    +media($tablet)
+        top: -194px
+        left: 422px
+        width: 150px
+        height: 93px
+
+    +media($mobile-lg)
+        top: calc(100% + 45px)
+        left: 19%
+
+.about-history__img--right
+    top: 0
+    left: 969px
+    z-index: 1
+    width: 385px
+    height: 240px
+
+    +media($tablet)
+        top: 4px
+        left: 558px
+        width: 279px
+        height: 173px
+
+    +media($mobile-lg)
+        top: calc(100% + 170px)
+        left: 53%
+        width: 211px
+        height: 131px
+
+.about-history__img--left
+    top: 40px
+    left: 690px
+    width: 176px
+    height: 245px
+
+    +media($tablet)
+        top: 96px
+        left: 387px
+        width: 106px
+        height: 146px
+
+    +media($mobile-lg)
+        top: calc(100% + 180px)
+        left: 0
+        width: 77px
+        height: 106px
+    
+.about-history__img--bottom
+    top: 363px
+    left: 840px
+    width: 211px
+    height: 181px
+
+    +media($tablet)
+        top: 281px
+        left: 489px
+        width: 133px
+        height: 114px
+
+    +media($mobile-lg)
+        top: calc(100% + 350px)
+        left: 23%
+        width: 115px
+        height: 99px
+
+.about-history__img--years-top
+    top: -191px
+    left: 1090px
+    width: 54px
+    height: 388px
+
+    +media($tablet)
+        top: -147px
+        left: 651px
+        width: 39px
+        height: 281px
+
+    +media($mobile-lg)
+        top: calc(100% + 42px)
+        left: 83%
+        width: 33px
+        height: 240px
+
+.about-history__img--years-bottom
+    top: 41px
+    left: 1090px
+    width: 54px
+    height: 388px
+
+    +media($tablet)
+        top: 32px
+        left: 651px
+        width: 39px
+        height: 281px
+
+    +media($mobile-lg)
+        top: calc(100% + 217px)
+        left: 83%
+        width: 33px
+        height: 200px
