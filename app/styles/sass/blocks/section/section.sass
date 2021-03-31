@@ -1,9 +1,6 @@
 .section
     padding: 128px 0
 
-    &:nth-child(even):not(.section--dark)
-        background-color: $bg-first
-
     +media($tablet)
         padding: 72px 0
 
@@ -165,11 +162,14 @@
     position: relative
     padding: 64px 0 145px
 
-    +media($mobile-lg)
-        padding: 44px 0 66px
+    +media(1336px)
+        padding: 4.8vw 0 10.9vw
+
+    // +media($mobile-lg)
+        // padding: 44px 0 66px
 
     +media($mobile-md)
-        padding: 30px 0 44px
+        9vw 0 13.3vw
 
     .section__title
         position: relative
@@ -179,17 +179,18 @@
         line-height: 1.2
 
         +media(1336px)
+            margin-bottom: 5.6vw
             font-size: 6.5869vw
 
-        +media($tablet)
-            margin-bottom: 60px
+        // +media($tablet)
+        //     margin-bottom: 60px
 
-        +media($mobile-lg)
-            margin-bottom: 48px
+        // +media($mobile-lg)
+        //     margin-bottom: 48px
 
         +media($mobile-md)
-            margin-bottom: 39px
-            font-size: 28px
+            margin-bottom: 11.7vw
+            font-size: 8.41vw
             line-height: $lineheight
 
         &::after
@@ -201,17 +202,21 @@
             height: 2px
             background-color: $textcolor
 
+            +media(1336px)
+                bottom: -2.2vw
+                width: 3.4vw
+
             +media($tablet)
-                width: 36px
-                bottom: -22px
+                // width: 36px
+                // bottom: -22px
 
             +media($mobile-lg)
-                width: 26px
-                bottom: -18px
+                // width: 26px
+                // bottom: -18px
 
             +media($mobile-md)
-                width: 18px
-                bottom: -16px
+                width: 5.4vw
+                bottom: -4.81vw
 
 .section--products
     padding-top: 0
@@ -271,6 +276,8 @@
             border-color: $second-text-color
 
 .section--technologies
+    background-color: $bg-first
+
     .section__title
         margin-bottom: 64px
 
@@ -397,6 +404,7 @@
 
 .section--working-conditions
     padding-bottom: 185px
+    background-color: $bg-first
 
     +media($tablet)
         padding-top: 128px

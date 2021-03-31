@@ -2,13 +2,17 @@
     margin-bottom: 40px
     opacity: 0.5
 
-    +media($tablet)
-        margin-bottom: 35px
-        font-size: 19px
+    +media(1336px)
+        margin-bottom: 3vw
+        font-size: 1.8vw
 
-    +media($mobile-lg)
-        margin-bottom: 28px
-        font-size: 14px
+    // +media($tablet)
+    //     margin-bottom: 35px
+    //     font-size: 19px
+
+    // +media($mobile-lg)
+    //     margin-bottom: 28px
+    //     font-size: 14px
 
     +media($mobile-md)
         margin-bottom: 21px
@@ -19,7 +23,7 @@
 
     +media($mobile-md)
         justify-content: space-between
-        margin-bottom: 44px
+        margin-bottom: 13.75vw
 
 .results__item
     flex-basis: 17%
@@ -29,10 +33,6 @@
         flex-grow: 1
         flex-shrink: 0
         box-sizing: border-box
-        padding-right: 10px
-
-    &:not(:last-child)
-        margin-right: 4px
 
 .results__item--accent
     position: absolute
@@ -44,27 +44,34 @@
     padding: 28px 36px
     box-sizing: border-box
 
-    +media($tablet)
-        top: 124px
-        left: -53px
-        width: 180px
-        height: 148px
-        padding: 22px 29px
+    +media(1336px)
+        top: 12.13vw
+        left: -6.2vw
+        width: 16.7vw
+        height: 13.85vw
+        padding: 2.1vw 2.7vw
 
-    +media($mobile-lg)
-        top: 103px
-        left: -43px
-        width: 134px
-        height: 108px
-        padding: 16px 21px
+    // +media($tablet)
+    //     top: 124px
+    //     left: -53px
+    //     width: 180px
+    //     height: 148px
+    //     padding: 22px 29px
+
+    // +media($mobile-lg)
+    //     top: 103px
+    //     left: -43px
+    //     width: 134px
+    //     height: 108px
+    //     padding: 16px 21px
 
     +media($mobile-md)
-        top: -34px
+        top: -10.625vw
         right: 26px
         left: unset
-        width: 108px
-        height: 90px
-        padding: 15px 18px
+        width: 33.75vw
+        height: 28.125vw
+        padding: 4.7vw 5.625vw
 
     .results__numbers,
     .results__description
@@ -75,27 +82,34 @@
     font-size: 44px
     color: $accent
 
-    +media($tablet)
-        font-size: 35px
+    +media(1336px)
+        margin-bottom: 0.6vw
+        font-size: 3.3vw
 
-    +media($mobile-lg)
-        font-size: 26px
+    // +media($tablet)
+    //     font-size: 35px
+
+    // +media($mobile-lg)
+    //     font-size: 26px
 
     +media($mobile-md)
-        margin-bottom: 5px
-        font-size: 21px
+        margin-bottom: 1.5vw
+        font-size: 6.3vw
 
 .results__description
     opacity: 0.5
 
-    +media($tablet)
-        font-size: 19px
+    +media(1336px)
+        font-size: 1.8vw
 
-    +media($mobile-lg)
-        font-size: 14px
+    // +media($tablet)
+    //     font-size: 19px
+
+    // +media($mobile-lg)
+    //     font-size: 14px
 
     +media($mobile-md)
-        font-size: 12px
+        font-size: 3.75vw
 
 .results__illustration
     position: absolute
@@ -104,14 +118,18 @@
     left: 59%
     padding-bottom: 488px
 
+    +media(1336px)
+        bottom: -10.9vw
+        padding-bottom: 36.53vw
+
     +media($tablet)
         left: 60%
-        padding-bottom: 412px
+        // padding-bottom: 412px
 
     +media($mobile-lg)
-        bottom: -66px
+        // bottom: -66px
         left: 61%
-        padding-bottom: 276px
+        // padding-bottom: 276px
 
     +media($mobile-md)
         position: relative
