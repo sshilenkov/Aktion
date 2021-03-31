@@ -2,39 +2,152 @@
     position: relative
     display: flex
     flex-wrap: wrap
-    max-width: 900px
     overflow: hidden
 
-    +media($mobile-lg)
+    +media($mobile-md)
         flex-direction: column
         flex-wrap: nowrap
 
 .directions__item
-    flex: 0 0 33.33%
     display: flex
     align-items: center
-    margin-bottom: 16px
+    margin-right: 25px
     font-size: 0
 
     +media($mobile-lg)
         flex-basis: auto
+        margin-right: 15px
+
+    +media($mobile-md)
+        align-items: flex-start
+        margin-right: 0
+        margin-bottom: 7px
+
+    &:hover
+        & .bookkeeping
+            path
+                stroke: $accent
+
+            circle
+                fill: $accent
+
+        & .safety
+            path
+                stroke: $accent
+
+                &:not(:nth-child(2))
+                    fill: $accent
+
+        & .education,
+        & .law,
+        & .management,
+        & .medicine,
+        & .personnel,
+        & .public-finance,
+        & .communal-services
+            path
+                stroke: $accent
+
+        & .finance
+            path
+                stroke: $accent
+
+            circle
+                stroke: $accent
+
+        & .goverment-purchases
+            path,
+            rect
+                stroke: $accent
+
+            circle
+                fill: $accent
+
+        & .culture
+            path,
+            circle
+                stroke: $accent
+        
+        & > a
+            color: $accent
 
     & > a
         color: $textcolor
-        font-size: $fontsize
-        line-height: $lineheight
+        font-size: 44px
+        font-weight: normal
+        line-height: 1.55
         text-decoration: none
         transition: color .3s
+        outline: none
 
-        &:hover
-            color: $accent
+        +media($mobile-lg)
+            font-size: 28px
 
-        +media($tablet)
+        +media($mobile-md)
             font-size: 20px
-            line-height: $big-lineheight
-
 
 .directions__icon
     display: inline-block
     vertical-align: middle
     margin-right: 13px
+
+    +media($mobile-lg)
+        margin-right: 0
+
+        & > svg
+            width: 70%
+
+    +media($mobile-md)
+        display: flex
+        justify-content: center
+        width: 25px
+        margin-right: 5px
+        padding-top: 4px
+
+        & > svg
+            width: auto
+            max-width: 20px
+            max-height: 20px
+
+.bookkeeping
+    path
+        transition: stroke .3s
+
+    circle
+        transition: fill .3s
+
+.safety
+    path
+        transition: stroke .3s, fill .3s
+
+.education,
+.law,
+.management,
+.medicine,
+.personnel,
+.public-finance,
+.communal-services
+    path
+        transition: stroke .3s
+
+.finance
+    path
+        transition: stroke .3s
+
+    circle
+        transition: stroke .3s
+
+.goverment-purchases
+    path,
+    rect
+        transition: stroke .3s
+
+    circle
+        transition: fill .3s
+
+.culture
+    path,
+    circle
+        transition: stroke .3s
+
+

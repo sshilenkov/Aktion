@@ -21,6 +21,7 @@ $systemfont: -apple-system, BlinkMacSystemFont, Arial, sans-serif // System Font
 $desktop-sm: 1416px
 $tablet: 1144px
 $mobile-lg: 790px
+$mobile-md: 640px
 $mobile-sm: 480px
 
 // MIXINS
@@ -46,6 +47,9 @@ $mobile-sm: 480px
 @include font('LabGrotesque', normal, 700, '../fonts/LabGrotesque-Bold.woff2', 'woff2')
 
 // GENERAL DOCUMENT STYLES
+
+html
+	scroll-behavior: smooth
 
 //  http://meyerweb.com/eric/tools/css/reset/ 
 //  v2.0 | 20110126

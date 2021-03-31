@@ -162,27 +162,86 @@
 
 // Home page sections
 .section--results
-    padding: 32px 0 0
+    position: relative
+    padding: 64px 0 145px
 
-    .section__rubric,
+    +media($mobile-lg)
+        padding: 44px 0 66px
+
+    +media($mobile-md)
+        padding: 30px 0 44px
+
     .section__title
-        font-size: $fontsize
-        line-height: $lineheight
+        position: relative
+        margin-bottom: 75px
+        font-size: 88px
+        font-weight: bold
+        line-height: 1.2
+
+        +media(1336px)
+            font-size: 6.5869vw
 
         +media($tablet)
-            font-size: 20px
-            line-height: $big-lineheight
+            margin-bottom: 60px
 
         +media($mobile-lg)
-            font-size: $fontsize
+            margin-bottom: 48px
+
+        +media($mobile-md)
+            margin-bottom: 39px
+            font-size: 28px
             line-height: $lineheight
 
+        &::after
+            content: ''
+            position: absolute
+            bottom: -30px
+            left: 0
+            width: 45px
+            height: 2px
+            background-color: $textcolor
+
+            +media($tablet)
+                width: 36px
+                bottom: -22px
+
+            +media($mobile-lg)
+                width: 26px
+                bottom: -18px
+
+            +media($mobile-md)
+                width: 18px
+                bottom: -16px
+
+.section--products
+    padding-top: 0
+    padding-bottom: 0
+    background-color: #fff !important
+
+    .section__rubric
+        margin-bottom: 64px
+
+        +media($tablet)
+            margin-bottom: 54px
+            font-size: $big-fontsize
+
+        +media($mobile-sm)
+            margin-bottom: 36px
+            font-size: 32px
+
 .section--directions
-    .section__title
-        margin-bottom: 47px
+    padding-bottom: 0
+
+    .section__rubric
+        margin-bottom: 64px
+
+        +media($tablet)
+            margin-bottom: 42px
+            font-size: $big-fontsize
 
         +media($mobile-lg)
-            margin-bottom: 24px
+            margin-bottom: 18px
+            font-size: 30px
 
 .section--news
     .section__title
@@ -511,6 +570,7 @@
     .section__title
         margin-bottom: 42px
         font-size: 110px
+        font-weight: bold
         line-height: 1.05
 
         +media($tablet)
