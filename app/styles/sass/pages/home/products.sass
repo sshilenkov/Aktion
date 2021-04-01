@@ -3,7 +3,7 @@ $desktop-sm: 1280px
 .products
     display: flex
 
-    +media($mobile-lg)
+    +media($mobile-md)
         flex-direction: column
 
 .products__list
@@ -16,54 +16,73 @@ $desktop-sm: 1280px
     border-right: none
     border-left: none
 
-    +media($desktop-sm)
-        padding-top: 32px
-        flex-basis: 28.5%
+    +media(1336px)
+        flex-basis: 30.58vw
+        margin-right: 9.81vw
+        padding-top: 3vw
 
-    +media($tablet)
-        padding-top: 22px
-        flex-basis: 32%
+    // +media($desktop-sm)
+    //     padding-top: 32px
+    //     flex-basis: 28.5%
 
-    +media($mobile-lg)
+    // +media($tablet)
+    //     padding-top: 22px
+    //     flex-basis: 32%
+
+    // +media($mobile-lg)
+    //     order: 2
+    //     flex-direction: row
+    //     margin-right: 0
+    //     padding-top: 0
+    //     border: none
+
+    +media($mobile-md)
         order: 2
+        flex-basis: auto
         flex-direction: row
         margin-right: 0
         padding-top: 0
         border: none
-
-    +media($mobile-md)
         overflow-x: scroll
 
 .products__item
 
-    +media($desktop-sm)
-        font-size: 20px
+    +media(1336px)
+        font-size: 1.8vw
 
-    +media(900px)
-        font-size: 14px
+    // +media($desktop-sm)
+    //     font-size: 20px
 
-    +media($mobile-lg)
-        flex-basis: calc(25% - 15px)
+    // +media(900px)
+    //     font-size: 14px
+
+    // +media($mobile-lg)
+    //     flex-basis: calc(25% - 15px)
 
     +media($mobile-md)
-        flex-basis: 205px
+        flex-basis: 64.1vw
         flex-shrink: 0
         flex-grow: 1
+        font-size: 6.25vw
 
     &:not(:last-child)
         margin-bottom: 40px
 
-        +media($desktop-sm)
-            margin-bottom: 32px
+        +media(1336px)
+            margin-bottom: 3vw
 
-        +media($tablet)
-            margin-bottom: 22px
+        // +media($desktop-sm)
+        //     margin-bottom: 32px
 
-        +media($mobile-lg)
-            margin-right: 20px
+        // +media($tablet)
+        //     margin-bottom: 22px
+
+        // +media($mobile-lg)
+        //     margin-right: 20px
 
         +media($mobile-md)
-            margin-right: 38px
+            margin-bottom: 0
+            margin-right: 12vw
 
     & > a
         display: block
@@ -89,33 +108,52 @@ $desktop-sm: 1280px
 .products__number
     margin-bottom: 12px
 
+    +media(1336px)
+        margin-bottom: 0.9vw
+
 .products__title
     margin-bottom: 12px
     color: $textcolor
     font-weight: bold
 
-    +media($desktop-sm)
-        margin-bottom: 10px
+    +media(1336px)
+        margin-bottom: 0.9vw
+
+    +media($mobile-md)
+        margin-bottom: 3.44vw
+        font-weight: 500
+
+    // +media($desktop-sm)
+    //     margin-bottom: 10px
     
-    +media($tablet)
-        margin-bottom: 8px
+    // +media($tablet)
+    //     margin-bottom: 8px
 
 .products__description
     font-size: 20px
 
-    +media($desktop-sm)
-        font-size: 17px
+    +media(1336px)
+        font-size: 1.5vw
 
-    +media($tablet)
-        font-size: 12px
+    +media($mobile-md)
+        font-size: 5vw
+
+    // +media($desktop-sm)
+    //     font-size: 17px
+
+    // +media($tablet)
+    //     font-size: 12px
 
 .products__holder
     flex-basis: 57.5%
     flex-grow: 1
 
-    +media($mobile-lg)
+    +media(1336px)
+        flex-basis: 54.791vw
+
+    +media($mobile-md)
         order: 1
-        margin-bottom: 36px
+        margin-bottom: 12vw
 
     & > div
         position: relative
@@ -133,6 +171,10 @@ $desktop-sm: 1280px
     background-color: $accent
     transition-property: width
     transition-timing-function: linear
+
+    +media($mobile-md)
+        top: -1px
+        bottom: -1px
 
     &.autoplay
         width: calc(100% - 2px)
