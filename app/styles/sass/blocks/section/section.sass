@@ -165,9 +165,6 @@
     +media(1336px)
         padding: 4.8vw 0 10.9vw
 
-    // +media($mobile-lg)
-        // padding: 44px 0 66px
-
     +media($mobile-md)
         9vw 0 13.3vw
 
@@ -181,12 +178,6 @@
         +media(1336px)
             margin-bottom: 5.6vw
             font-size: 6.5869vw
-
-        // +media($tablet)
-        //     margin-bottom: 60px
-
-        // +media($mobile-lg)
-        //     margin-bottom: 48px
 
         +media($mobile-md)
             margin-bottom: 11.7vw
@@ -206,14 +197,6 @@
                 bottom: -2.2vw
                 width: 3.4vw
 
-            +media($tablet)
-                // width: 36px
-                // bottom: -22px
-
-            +media($mobile-lg)
-                // width: 26px
-                // bottom: -18px
-
             +media($mobile-md)
                 width: 5.4vw
                 bottom: -4.81vw
@@ -232,14 +215,6 @@
         +media($mobile-md)
             margin-bottom: 7vw
             font-size: 7.5vw
-
-        // +media($tablet)
-        //     margin-bottom: 54px
-        //     font-size: $big-fontsize
-
-        // +media($mobile-sm)
-        //     margin-bottom: 36px
-        //     font-size: 32px
 
 .section--directions
     padding-bottom: 0
@@ -597,6 +572,8 @@
             font-size: 33px
 
 .section--mission
+    background-color: $bg-first
+
     +media($tablet)
         padding: 70px 0 76px
 
@@ -648,8 +625,12 @@
             object-fit: cover
 
 .section--vision
+    +media($tablet)
+        padding: 11.1888vw 0
+
     +media($mobile-lg)
         position: relative
+        z-index: 1
         padding: 191px 0 48px
 
         &::before
@@ -657,10 +638,10 @@
             position: absolute
             top: 48px
             right: 0
-            bottom: 12%
+            bottom: 0
             left: 0
             z-index: 2
-            background: linear-gradient(5.05deg,#fff 55.82%,rgba(255,255,255,.785801) 64.14%,rgba(255,255,255,.48) 71.92%,rgba(255,255,255,0) 86.87%)
+            background: linear-gradient(5.05deg,#fff 59.82%,rgba(255,255,255,0.885801) 68.14%,rgba(255,255,255,.48) 74.92%,rgba(255,255,255,0) 88.87%)
             
 
     .section__img
@@ -677,18 +658,27 @@
 
         +media($tablet)
             top: unset
-            right: unset
-            bottom: -72px
-            left: -35px
-            width: 228px
-            height: 552px
+            bottom: -11.1888vw
+            right: calc(100% - 21.4vw)
+            width: 29.721vw
+            height: 71.68vw
 
         +media($mobile-lg)
             top: -35px
-            right: -77px
+            right: 0
             bottom: unset
             left: unset
             z-index: 1
+            width: 50.2vw
+            height: 122vw
+
+        +media($mobile-md)
+            right: -27px
+
+        +media($mobile-sm)
+            right: -77px
+            width: 75.4vw
+            height: 183vw
 
         & > img
             position: absolute
@@ -702,18 +692,22 @@
 
     .section__rubric,
     .section__title
-        width: 826px
+        width: 840px
         margin-left: auto
         line-height: 1.2
 
         +media($tablet)
             width: auto
-            margin-left: 180px
+            margin-left: 19vw
+            font-size: 4.2vw
 
         +media($mobile-lg)
             position: relative
             z-index: 2
+            max-width: 65.7vw
             margin-left: unset
+            // font-size: 7.5vw
+            font-size: 24px
 
     .section__rubric
         position: relative
@@ -733,8 +727,8 @@
 
             +media($tablet)
                 left: -5.2%
-                width: 69px
-                height: 51px
+                width: 8.9vw
+                height: 6.732vw
 
             +media($mobile-lg)
                 top: -151px
@@ -746,8 +740,8 @@
         margin-bottom: 24px
 
         +media($mobile-lg)
-            max-width: 81%
-            margin-bottom: 16px
+            // max-width: 81%
+            // margin-bottom: 16px
 
     .section__content
         width: 826px
@@ -755,7 +749,7 @@
 
         +media($tablet)
             width: auto
-            margin-left: 180px
+            margin-left: 19vw
 
         +media($mobile-lg)
             position: relative
@@ -782,6 +776,8 @@
             transform: rotate(315deg)
 
 .section--history
+    background-color: $bg-first
+
     +media($tablet)
         .section__link
             font-size: $small-fontsize
@@ -792,6 +788,8 @@
                 margin-left: 8px
 
     +media($mobile-lg)
+        position: relative
+        z-index: 2
         padding: 48px 0 520px
 
         .section__link
@@ -820,5 +818,8 @@
 
         +media($tablet)
             max-width: 420px
+
+        +media($mobile-lg)
+            max-width: unset
 
 // Company page end
