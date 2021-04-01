@@ -3,7 +3,7 @@ $desktop-sm: 1280px
 .products
     display: flex
 
-    +media($mobile-md)
+    +media($mobile-lg)
         flex-direction: column
 
 .products__list
@@ -21,7 +21,7 @@ $desktop-sm: 1280px
         margin-right: 9.81vw
         padding-top: 3vw
 
-    +media($mobile-md)
+    +media($mobile-lg)
         order: 2
         flex-basis: auto
         flex-direction: row
@@ -35,11 +35,15 @@ $desktop-sm: 1280px
     +media(1336px)
         font-size: 1.8vw
 
-    +media($mobile-md)
+    +media($mobile-lg)
         flex-basis: 64.1vw
         flex-shrink: 0
         flex-grow: 1
-        font-size: 6.25vw
+        // font-size: 6.25vw
+        font-size: 24px
+
+    +media($mobile-sm)
+        font-size: 20px
 
     &:not(:last-child)
         margin-bottom: 40px
@@ -47,7 +51,7 @@ $desktop-sm: 1280px
         +media(1336px)
             margin-bottom: 3vw
 
-        +media($mobile-md)
+        +media($mobile-lg)
             margin-bottom: 0
             margin-right: 12vw
 
@@ -67,6 +71,7 @@ $desktop-sm: 1280px
 
         &[aria-selected="true"]
             opacity: 1
+            outline: none
 
             .products__number
                 color: $accent
@@ -86,7 +91,7 @@ $desktop-sm: 1280px
     +media(1336px)
         margin-bottom: 0.9vw
 
-    +media($mobile-md)
+    +media($mobile-lg)
         margin-bottom: 3.44vw
         font-weight: 500
 
@@ -96,8 +101,12 @@ $desktop-sm: 1280px
     +media(1336px)
         font-size: 1.5vw
 
-    +media($mobile-md)
-        font-size: 5vw
+    +media($mobile-lg)
+        // font-size: 5vw
+        font-size: 20px
+
+    +media($mobile-sm)
+        font-size: 16px
 
 .products__holder
     flex-basis: 57.5%
@@ -106,9 +115,9 @@ $desktop-sm: 1280px
     +media(1336px)
         flex-basis: 54.791vw
 
-    +media($mobile-md)
+    +media($mobile-lg)
         order: 1
-        margin-bottom: 12vw
+        margin-bottom: 38px
 
     & > div
         position: relative
@@ -127,7 +136,7 @@ $desktop-sm: 1280px
     transition-property: width
     transition-timing-function: linear
 
-    +media($mobile-md)
+    +media($mobile-lg)
         top: -1px
         bottom: -1px
 
