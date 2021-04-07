@@ -1,12 +1,17 @@
 .results__title
     margin-bottom: 30px
+    font-size: 20px
     opacity: 0.5
 
     +media(1336px)
-        margin-bottom: 3vw
-        font-size: 1.8vw
+        margin-bottom: 2.2455vw
+        font-size: 1.5vw
 
     +media($mobile-lg)
+        margin-bottom: 4.81vw
+        font-size: 2.53vw
+
+    +media($mobile-sm)
         margin-bottom: 6.6vw
         font-size: 3.75vw
 
@@ -14,41 +19,59 @@
     display: flex
 
     +media($mobile-lg)
+        margin-bottom: 9.5vw
+
+    +media($mobile-sm)
         justify-content: space-between
         margin-bottom: 13.75vw
 
 .results__item
-    flex-basis: 17%
+    flex-basis: 15%
 
     +media($mobile-lg)
+        flex-basis: 23%
+        margin-right: 4vw
+
+    +media($mobile-sm)
         flex-basis: 34%
         flex-grow: 1
         flex-shrink: 0
         box-sizing: border-box
+        margin-right: 0
 
 .results__item--accent
     position: absolute
-    top: 162px
-    left: -83px
+    top: 151px
+    left: -143px
     background-color: $accent
-    width: 223px
-    height: 185px
+    width: 213px
+    height: 175px
     padding: 28px 36px
     box-sizing: border-box
 
     +media(1336px)
-        top: 12.13vw
-        left: -6.2vw
-        width: 16.7vw
-        height: 13.85vw
+        top: 11.3024vw
+        left: -10.70356vw
+        width: 15.954vw
+        height: 13.1081vw
         padding: 2.1vw 2.7vw
 
     +media($mobile-lg)
+        top: -7.2vw
+        right: 26px
+        left: unset
+        width: 22.8vw
+        height: 19vw
+        margin-right: 17vw
+        padding: 3vw 3.5vw
+
+    +media($mobile-sm)
         top: -10.625vw
         right: 26px
         left: unset
         width: 33.75vw
         height: 28.125vw
+        margin-right: 0
         padding: 4.7vw 5.625vw
 
     .results__numbers
@@ -60,35 +83,44 @@
 
 .results__numbers
     margin-bottom: 8px
-    font-size: 44px
+    font-size: 40px
     color: $accent
 
     +media(1336px)
         margin-bottom: 0.6vw
-        font-size: 3.3vw
+        font-size: 3vw
 
     +media($mobile-lg)
+        font-size: 4.2vw
+
+    +media($mobile-sm)
         margin-bottom: 1.5vw
         font-size: 6.3vw
 
 .results__description
+    padding-right: 5%
+    font-size: 20px
     opacity: 0.5
 
     +media(1336px)
-        font-size: 1.8vw
+        font-size: 1.5vw
 
     +media($mobile-lg)
+        font-size: 2.53vw
+
+    +media($mobile-sm)
+        padding-right: 0
         font-size: 3.75vw
 
 .results__illustration
     position: absolute
     right: 0
-    bottom: -145px
+    bottom: -176px
     left: 59%
     padding-bottom: 488px
 
     +media(1336px)
-        bottom: -10.9vw
+        bottom: -13.17365vw
         padding-bottom: 36.53vw
 
     +media($tablet)

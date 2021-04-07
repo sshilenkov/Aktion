@@ -9,8 +9,11 @@
 
     +media($mobile-lg)
         flex-direction: column
-        // font-size: 4.375vw
+        max-width: 75%
         font-size: 14px
+
+    +media($mobile-sm)
+        max-width: 90%
 
 .vision__col
     flex-basis: 384px
@@ -34,6 +37,3 @@
 .vision__description
     &:not(:last-child)
         margin-bottom: 16px
-
-        +media($mobile-lg)
-            margin-bottom: 0

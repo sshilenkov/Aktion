@@ -18,27 +18,6 @@
     +media($tablet)
         font-size: 14px
 
-.vacancies__backward
-    display: none
-
-    &:hover
-        cursor: pointer
-
-    &::before
-        content: ''
-        display: inline-block
-        width: 9px
-        height: 13px
-        margin-right: 10px
-        background-image: url('/images/dist/arrow-backward.svg')
-        background-size: contain
-        background-position: center
-        background-repeat: no-repeat
-
-        +media($tablet)
-            width: 8px
-            height: 10px
-
 .vacancies__content
     flex-basis: 62.5%
     font-size: $big-fontsize
@@ -54,6 +33,7 @@
         display: none
         margin-bottom: 31px
         padding-bottom: 31px
+        box-sizing: border-box
 
         +media($mobile-lg)
             margin-bottom: 21px

@@ -16,7 +16,7 @@
 
     +media($mobile-lg)
         flex-basis: auto
-        margin-right: 15px
+        margin-right: 10px
 
     +media($mobile-md)
         align-items: flex-start
@@ -80,8 +80,11 @@
         transition: color .3s
         outline: none
 
-        +media($mobile-lg)
+        +media($tablet)
             font-size: 28px
+
+        +media($mobile-lg)
+            font-size: 20px
 
         +media($mobile-md)
             font-size: 20px
@@ -91,11 +94,17 @@
     vertical-align: middle
     margin-right: 13px
 
-    +media($mobile-lg)
+    +media($tablet)
         margin-right: 0
 
         & > svg
             width: 70%
+
+    +media($mobile-lg)
+        & > svg
+            display: block
+            width: 50%
+            margin: 0 auto
 
     +media($mobile-md)
         display: flex

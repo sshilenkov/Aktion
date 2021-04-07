@@ -3,9 +3,13 @@
     color: $second-text-color
 
     +media($mobile-lg)
+        max-width: 60%
         min-height: unset
         font-size: 14px
         line-height: $big-lineheight
+
+    +media($mobile-md)
+        max-width: 80%
 
 .career__img
     position: absolute

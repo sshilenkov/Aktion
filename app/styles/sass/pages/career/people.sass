@@ -50,6 +50,13 @@
     display: flex
     justify-content: center
     text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $textcolor
+
+        &::after
+            background-image: url('/images/dist/link-circle-hover.svg')
 
     +media($mobile-lg)
         align-items: center
@@ -63,6 +70,7 @@
         background-repeat: no-repeat
         background-size: cover
         background-position: center
+        transition: background-image .3s
 
         +media($mobile-lg)
             width: 15px

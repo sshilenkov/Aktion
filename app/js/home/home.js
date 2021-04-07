@@ -18,6 +18,11 @@ export default class Home {
         // this.directionsToggler();
 
         this.initLax();
+        
+        this.bindTechnologiesContentHeight = this.technologiesContentHeight.bind(this);
+        window.onload = () => {
+            this.technologiesContentHeight();
+        }
     }
     
     initSlider(className) {
@@ -75,7 +80,6 @@ export default class Home {
                 videoNodes[idx].play();
 
                 if (window.innerWidth < 641) {
-                    // list.scrollLeft = item.offsetLeft;
                     list.scroll({
                         top: 0,
                         left: item.offsetLeft,
@@ -84,6 +88,26 @@ export default class Home {
                 }
             }, false);
         });
+    }
+
+    technologiesContentHeight() {
+        const items = this.root.querySelectorAll('.technologies__item');
+        let maxHeight = 0;
+
+        items.forEach((item) => {
+            const content = item.querySelector('.technologies__content');
+            content.style.height = 'unset';
+
+            if (content.offsetHeight > maxHeight) {
+                maxHeight = content.offsetHeight;
+            }
+        });
+        items.forEach((item) => {
+            const content = item.querySelector('.technologies__content');
+            content.style.height = `${maxHeight}px`;
+        });
+
+        window.addEventListener('resize', debounce(this.bindTechnologiesContentHeight, 200));
     }
 
     playVideo(DOMnode) {

@@ -87,13 +87,14 @@
     top: 50%
     right: 0
     z-index: 3
-    width: 64px
-    height: 64px
+    width: 63px
+    height: 63px
+    border: 1px solid $accent
+    border-radius: 50%
     background-color: $accent
     background-image: url('/images/dist/arrow.svg')
     background-repeat: no-repeat
     background-position: 55% 50%
-    border-radius: 50%
     transform: translate(50%, -50%)
     transition: all .3s
 
@@ -135,11 +136,10 @@
             margin-bottom: 24px
 
 .section__date
-    margin-bottom: 46px
+    margin-bottom: 26px
     font-size: $small-fontsize
 
     +media($mobile-lg)
-        margin-bottom: 28px
         font-size: 14px
 
 .section__crossed-out
@@ -156,33 +156,48 @@
         height: 4px
         background-color: $accent
 
+        +media($mobile-lg)
+            height: 2px
+
 
 // Home page sections
 .section--results
     position: relative
-    padding: 32px 0 145px
+    padding: 48px 0 176px
 
     +media(1336px)
-        padding: 4.8vw 0 10.9vw
+        padding: 3.5928vw 0 13.17365vw
 
-    +media($mobile-md)
-        9vw 0 13.3vw
+    +media($mobile-lg)
+        padding-bottom: 78px
+
+    +media($mobile-sm)
+        padding-bottom: 48px
 
     .section__title
         position: relative
         margin-bottom: 65px
-        font-size: 88px
+        font-size: 80px
         font-weight: bold
-        line-height: 1
+        line-height: 1.1
 
         +media(1336px)
-            margin-bottom: 5.6vw
-            font-size: 6.5869vw
+            margin-bottom: 4.86525vw
+            font-size: 5.9881vw
 
-        +media($mobile-md)
+        +media($mobile-lg)
+            margin-bottom: 8.228vw
+
+        +media($mobile-sm)
             margin-bottom: 11.7vw
+            padding-right: 3vw
             font-size: 8.41vw
             line-height: $lineheight
+
+            br
+                display: none
+
+        // +media($mobile-md)
 
         &::after
             content: ''
@@ -197,7 +212,10 @@
                 bottom: -2.2vw
                 width: 3.4vw
 
-            +media($mobile-md)
+            +media($mobile-lg)
+                bottom: -3.418vw
+
+            +media($mobile-sm)
                 width: 5.4vw
                 bottom: -4.81vw
 
@@ -213,25 +231,37 @@
             // font-size: 3.6vw
 
         +media($mobile-lg)
-            margin-bottom: 7vw
+
+            margin-bottom: 22px
 
             // font-size: 7.5vw
 
 .section--directions
     padding-bottom: 0
 
+    +media($mobile-lg)
+        padding-top: 78px
+
+    +media($mobile-sm)
+        padding-top: 48px
+
     .section__rubric
         margin-bottom: 64px
 
         +media($tablet)
             margin-bottom: 42px
-            // font-size: $big-fontsize
 
         +media($mobile-lg)
             margin-bottom: 18px
-            // font-size: 30px
 
 .section--news
+
+    +media($mobile-lg)
+        padding-top: 78px
+
+    +media($mobile-sm)
+        padding-top: 48px
+
     .section__title
         margin-bottom: 63px
 
@@ -458,7 +488,7 @@
 // Contacts page sections start
 
 .section--contacts
-    padding: 24px 0 124px
+    padding: 24px 0 94px
 
     +media($tablet)
         padding: 32px 0 100px
@@ -479,7 +509,6 @@
             font-size: 24px
 
     .section__title
-        max-width: 75%
         margin-bottom: 42px
         font-size: 94px
         line-height: 1
@@ -492,8 +521,12 @@
             font-size: 54px
 
         +media($mobile-lg)
+            max-width: 75%
             margin-bottom: 20px
             font-size: 36px
+
+        +media($mobile-sm)
+            max-width: unset
 
 // Contacts page sections end
 
@@ -572,6 +605,10 @@
             margin-bottom: 0
             font-size: 33px
 
+        +media(368px)
+            br
+                display: none
+
 .section--mission
     background-color: $bg-first
 
@@ -632,18 +669,23 @@
     +media($mobile-lg)
         position: relative
         z-index: 1
-        padding: 191px 0 48px
+        padding: 301px 0 48px
 
         &::before
             content: ''
             position: absolute
-            top: 48px
+            top: 148px
             right: 0
             bottom: 0
             left: 0
             z-index: 2
             background: linear-gradient(5.05deg,#fff 59.82%,rgba(255,255,255,0.885801) 68.14%,rgba(255,255,255,.48) 74.92%,rgba(255,255,255,0) 88.87%)
-            
+
+    +media($mobile-sm)
+        padding-top: 200px
+
+        &::before
+            background: linear-gradient(5.05deg,#fff 67.82%,rgba(255,255,255,.885801) 76.14%,rgba(255,255,255,.48) 82.92%,rgba(255,255,255,0) 96.87%)
 
     .section__img
         position: absolute
@@ -658,25 +700,26 @@
             right: calc(100% - 250px)
 
         +media($tablet)
-            top: unset
             bottom: -11.1888vw
             right: calc(100% - 21.4vw)
             width: 29.721vw
             height: 71.68vw
 
         +media($mobile-lg)
-            top: -35px
+            top: -135px
             right: 0
             bottom: unset
             left: unset
             z-index: 1
-            width: 50.2vw
-            height: 122vw
+            width: 51.2vw
+            height: 124vw
 
         +media($mobile-md)
+            top: -70px
             right: -27px
 
         +media($mobile-sm)
+            top: -35px
             right: -77px
             width: 75.4vw
             height: 183vw
@@ -732,8 +775,13 @@
                 height: 6.732vw
 
             +media($mobile-lg)
-                top: -151px
+                top: -201px
                 left: -35px
+                width: 220px
+                height: 168px
+
+            +media($mobile-sm)
+                top: -144px
                 width: 168px
                 height: 128px
 
