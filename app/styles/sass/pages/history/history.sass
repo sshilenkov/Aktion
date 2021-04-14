@@ -1,4 +1,4 @@
-$animation-duration: 2.5s
+$animation-duration: 250s
     
 main.history
     position: relative
@@ -78,7 +78,6 @@ main.history
     position: absolute
     top: 20%
     left: 16%
-    z-index: 9
     color: #fff
     line-height: 1
     opacity: 0
@@ -133,8 +132,8 @@ main.history
     color: #fff
     font-weight: 400
     opacity: 0
-    transform: translateY(0)
-    transition: all .5s
+    transform: translateY(-50%)
+    transition: all .4s
 
     +media($tablet)
         max-width: 450px
@@ -150,7 +149,6 @@ main.history
 
     &.js-content-animation
         opacity: 1
-        transform: translateY(-50%)
 
 .history__content--alt
     right: 6%
@@ -165,6 +163,7 @@ main.history
     align-items: center
     margin-bottom: 16px
     font-size: 10px
+    text-transform: uppercase
     letter-spacing: .2em
 
 .history__dot
@@ -186,6 +185,11 @@ main.history
 
     +media($mobile-sm)
         font-size: 14px
+
+.history__progress
+    margin-top: 40px
+    font-size: 16px
+    font-weight: 500
 
 // Swiper
 .main-slider
@@ -209,9 +213,11 @@ main.history
 .main-slider__slide
     position: relative
 
-.main-slider__slide.swiper-slide-active
-    & .second-slider__progress
-        display: block
+.paused
+    -webkit-animation-play-state:paused
+    -moz-animation-play-state:paused
+    -o-animation-play-state:paused 
+    animation-play-state:paused
 
 .second-slider__slide
     position: relative
@@ -246,7 +252,6 @@ main.history
         &.js-animation-start
             animation-name: startAnimationThirdSlide
 
-
     &:nth-child(4)
         &.js-animation-start
             animation-name: startAnimationFourthSlide
@@ -260,6 +265,10 @@ main.history
         width: 100%
         height: 100%
         object-fit: cover
+
+// fix slide display before animation start
+.second-slider__slide--initial
+    opacity: 0
 
 @keyframes blackout
     0%
@@ -335,24 +344,6 @@ main.history
         z-index: -1
         opacity: 0.15
         transform: translate(-300%, 20%) scale(.2)
-
-.second-slider__progress
-    position: absolute
-    top: unset !important
-    bottom: 6% !important
-    left: 16% !important
-    z-index: 5
-    display: none
-    width: calc(100% - 16%) !important
-    height: 1px
-    background-color: rgba(255,255,255,0.25)
-    animation-duration: $animation-duration
-    animation-name: progress
-    animation-timing-function: linear
-
-    +media($mobile-lg)
-        left: 100px !important
-        width: calc(100% - 100px) !important
 
 .second-slider__item
     position: absolute

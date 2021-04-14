@@ -27,8 +27,12 @@ $mobile-sm: 480px
 // MIXINS
 
 =media($resolution)
-  @media screen and (max-width: $resolution)
-    @content
+  	@media screen and (max-width: $resolution)
+    	@content
+
+=mediaHeight($resolution)
+	@media screen and (max-height: $resolution)
+		@content
 
 // FONTS LOAD SECTION
 

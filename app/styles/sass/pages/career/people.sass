@@ -82,82 +82,232 @@
 
 .people__holder
     position: absolute
-    top: 70%
-    left: 50%
-    z-index: 2
+    // top: 70%
+    // left: 50%
+    // z-index: 2
     width: 236px
     padding-bottom: 320px
+
+    +media($tablet)
+        width: 20.6vw
+        padding-bottom: 28vw
+
+    +media($mobile-lg)
+        width: 110px
+        padding-bottom: 150px
 
     &:hover
         & > .people__photo
             opacity: 0.2
 
+            +media($mobile-lg)
+                opacity: 1
+
         & > .people__description
             opacity: 1
+
+            +media($mobile-lg)
+                opacity: 0
 
 .people__holder--wide
     width: 448px
     padding-bottom: 252px
 
+    +media($tablet)
+        width: 39.2vw
+        padding-bottom: 22vw
+
+    +media($mobile-lg)
+        width: 210px
+        padding-bottom: 118px
+
 .people__holder--1
-    transform: translate(-13%,-253%)
+    top: -18%
+    left: 46%
+
+    +mediaHeight(800px)
+        top: -33%
+
+    +media($mobile-lg)
+        top: calc(50% - 299px)
+        left: calc(50% - 80px)
 
 .people__holder--2
-    transform: translate(81%,-278%)
+    top: -4%
+    left: 77%
+
+    +mediaHeight(800px)
+        top: -19%
+
+    +media($mobile-lg)
+        top: calc(50% - 240px)
+        left: calc(50% + 90px)
 
 .people__holder--3
-    transform: translate(215%,-96%)
+    top: 32%
+    left: 89%
+
+    +media($mobile-lg)
+        top: calc(50% - 50px)
+        left: calc(50% + 170px)
 
 .people__holder--4
-    transform: translate(203%,75%)
+    top: 92%
+    left: 86%
+
+    +media($mobile-lg)
+        top: calc(50% + 205px)
+        left: calc(50% + 150px)
 
 .people__holder--5
-    transform: translate(24%,40%)
+    top: 80%
+    left: 53%
+
+    +media($mobile-lg)
+        top: calc(50% + 145px)
+        left: calc(50% - 40px)
 
 .people__holder--6
-    transform: translate(-129%,76%)
+    top: 87%
+    left: 0%
+
+    +media($mobile-lg)
+        top: calc(50% + 175px)
+        left: calc(50% - 350px)
 
 .people__holder--7
-    transform: translate(-305%,-106%)
+    top: 27%
+    left: -7%
+
+    +media($mobile-lg)
+        top: calc(50% - 85px)
+        left: calc(50% - 310px)
 
 .people__holder--8
-    transform: translate(-146%,-326%)
+    top: -19%
+    left: 1%
+
+    +mediaHeight(800px)
+        top: -34%
+
+    +media($mobile-lg)
+        top: calc(50% - 315px)
+        left: calc(50% - 350px)
 
 .people__holder--9
-    transform: translate(196%, -360%)
+    top: -54%
+    left: 85%
+
+    +mediaHeight(800px)
+        top: -84%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--10
-    transform: translate(390%,-338%)
+    top: -49%
+    left: 123%
+
+    +mediaHeight(800px)
+        top: -79%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--11
-    transform: translate(210%,-235%)
+    top: 10%
+    left: 125%
+
+    +mediaHeight(800px)
+        top: -5%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--12
-    transform: translate(395%,-37%)
+    top: 53%
+    left: 125%
+
+    +media($mobile-lg)
+        top: calc(50% + 40px)
+        left: calc(50% + 360px)
 
 .people__holder--13
-    transform: translate(200%,145%)
+    top: 105%
+    left: 120%
+
+    +mediaHeight(800px)
+        top: 120%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--14
-    transform: translate(-490%,120%)
+    top: 101%
+    left: -49%
+
+    +mediaHeight(800px)
+        top: 121%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--15
-    transform: translate(-444%,-35%)
+    top: 53%
+    left: -35%
+
+    +mediaHeight(800px)
+        top: 63%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--16
-    transform: translate(-315%,-221%)
+    top: 10%
+    left: -56%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--17
-    transform: translate(-425%,-334%)
+    top: -48%
+    left: -32%
+
+    +mediaHeight(800px)
+        top: -68%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--18
-    transform: translate(-83%,-456%)
+    top: -59%
+    left: 17%
+
+    +mediaHeight(800px)
+        top: -89%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--19
-    transform: translate(-393%,-94%)
+    top: -34%
+    left: -83%
+
+    +mediaHeight(800px)
+        top: -49%
+
+    +media($mobile-lg)
+        display: none
 
 .people__holder--20
-    transform: translate(-385%,-372%)
+    top: 47%
+    left: -85%
+
+    +mediaHeight(800px)
+        top: 62%
+
+    +media($mobile-lg)
+        display: none
 
 .people__photo
     position: absolute
@@ -173,9 +323,13 @@
 
 .people__description
     position: absolute
-    top: 73%
+    bottom: -16%
     left: 41%
     z-index: 3
     width: 300px
+    font-size: 18px
     opacity: 0
-    pointer-events: none
+    cursor: default
+
+    +media($tablet)
+        width: 26vw

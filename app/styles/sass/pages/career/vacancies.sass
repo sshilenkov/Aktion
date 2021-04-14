@@ -28,9 +28,17 @@
     +media($mobile-lg)
         font-size: 20px
 
+.vacancies__directions
+    & > li:not(:first-child)
+        .vacancies__department
+            padding-top: 16px
+
 .vacancies__list
+    overflow: hidden
+    transition: height .3s
+
     & > li:not(.vacancies__department)
-        display: none
+        // display: none
         margin-bottom: 31px
         padding-bottom: 31px
         box-sizing: border-box
@@ -67,7 +75,6 @@
 .vacancies__department
     display: flex
     justify-content: space-between
-    margin-bottom: 16px
     padding-bottom: 16px
     border-bottom: 1px solid #DDD
     transition: color .3s

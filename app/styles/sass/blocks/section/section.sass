@@ -135,6 +135,8 @@
         +media($mobile-lg)
             margin-bottom: 24px
 
+    
+
 .section__date
     margin-bottom: 26px
     font-size: $small-fontsize
@@ -159,6 +161,13 @@
         +media($mobile-lg)
             height: 2px
 
+.section__content-link
+    color: $textcolor
+    text-decoration: none
+    transition: color .3s
+
+    &:hover
+        color: $accent
 
 // Home page sections
 .section--results
@@ -365,6 +374,7 @@
     overflow: hidden
 
     .section__content
+        position: relative
         height: calc(100vh - 82px)
 
         +media($mobile-lg)

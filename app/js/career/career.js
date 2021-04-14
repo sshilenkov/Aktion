@@ -1,4 +1,5 @@
 import Parallax from 'parallax-js';
+import { gsap } from 'gsap';
 import Tabby from 'tabbyjs';
 import { debounce } from 'debounce';
 import animate from '../animate';
@@ -6,6 +7,7 @@ import animate from '../animate';
 export default class Career {
     constructor(root) {
         this.root = root;
+        this.currentAnimationNumber = 0;
 
         this.addClasses();
         this.initParallax();
@@ -13,6 +15,10 @@ export default class Career {
         this.calcConditionsImgHeight();
         this.initTabs();
         this.initVacancies();
+
+        this.bindParallax = this.initParallax.bind(this);
+
+        window.addEventListener('resize', debounce(this.bindParallax, 200));
     }
 
     addClasses() {
@@ -24,14 +30,65 @@ export default class Career {
     }
 
     initParallax() {
-        const scene = this.root.getElementsByClassName('section__scene')[0];
-        const parallaxInstance = new Parallax(scene, {
-            relativeInput: true,
-            hoverOnly: true,
-            clipRelativeInput: true,
-            pointerEvents: true,
-            frictionX: 0.035,
-            frictionY: 0.035,
+        // const scene = this.root.getElementsByClassName('section__scene')[0];
+        // const parallaxInstance = new Parallax(scene, {
+        //     relativeInput: true,
+        //     hoverOnly: true,
+        //     clipRelativeInput: true,
+        //     pointerEvents: true,
+        //     frictionX: 0.035,
+        //     frictionY: 0.035,
+        // });
+        const holder = this.root.querySelector('.section__content');
+        holder.removeEventListener('mousemove', this.handleMouseMove, false);
+
+        if (window.innerWidth > 790) {
+            holder.addEventListener('mousemove', this.handleMouseMove.bind(this), false);
+        }
+
+        if (window.innerWidth < 791) {
+            // возвращаем в центр
+            gsap.to('.people', {
+                x: 0,
+                y: 0,
+                duration: 2,
+                ease: 'linear',
+            });
+        }
+    }
+
+    handleMouseMove(e) {
+        this.currentAnimationNumber += 1;
+        const people = document.querySelector('.people');
+        const topElem = people.querySelector('.people__holder--18');
+        const leftElem = people.querySelector('.people__holder--19');
+        const windowWidth = window.innerWidth;
+        const windowHeight = window.innerHeight;
+
+        const centerX = windowWidth / 2;
+        const centerY = windowHeight / 2;
+        const coefficientX = (Math.abs(leftElem.offsetLeft) + windowWidth) / people.offsetWidth;
+        const coefficientY = (Math.abs(topElem.offsetTop) + windowHeight) / people.offsetHeight;
+
+        requestAnimationFrame(() => {
+            gsap.to(people, {
+                x: (centerX - e.pageX) * coefficientX,
+                y: (centerY - e.pageY) * coefficientY,
+                duration: 4,
+                ease: 'linear',
+                onComplete: (animationNumber) => {
+                    // check if it last animation and return to center
+                    if (animationNumber === this.currentAnimationNumber) {
+                        gsap.to('.people', {
+                            x: 0,
+                            y: 0,
+                            duration: 4,
+                            ease: 'linear',
+                        });
+                    }
+                },
+                onCompleteParams: [this.currentAnimationNumber],
+            });
         });
     }
 
@@ -105,31 +162,12 @@ export default class Career {
         }
     }
 
-    isOutOfViewport(elem) {
-
-        // Get element's bounding
-        var bounding = elem.getBoundingClientRect();
-    
-        // Check if it's out of the viewport on each side
-        var out = {};
-        out.top = bounding.top < 0;
-        out.left = bounding.left < 0;
-        out.bottom = bounding.bottom > (window.innerHeight || document.documentElement.clientHeight);
-        out.right = bounding.right > (window.innerWidth || document.documentElement.clientWidth);
-        out.any = out.top || out.left || out.bottom || out.right;
-        out.all = out.top && out.left && out.bottom && out.right;
-    
-        return out;
-    
-    };
-
     initVacancies() {
-        const content = this.root.querySelector('.vacancies__content');
-        const directions = content.querySelector('.vacancies__directions');
-        const vacanciesLists = directions.getElementsByClassName('vacancies__list');
+        const vacanciesLists = this.root.querySelectorAll('.vacancies__list');
         
         for (let i = 0; i < vacanciesLists.length; i++) {
             const currentList = vacanciesLists[i];
+            const department = currentList.querySelector('.vacancies__department');
 
             // Считаем и выводим количество вакансий для каждого направления
             const counter = currentList.querySelector('.vacancies__counter');
@@ -137,15 +175,47 @@ export default class Career {
             if (counter) {
                 counter.innerHTML = (items.length - 1);
             }
+
+            // Нужны для изменения высоты списка
+            currentList.dataset.heightOpen = currentList.offsetHeight;
+            currentList.dataset.heightClosed = department.offsetHeight;
+
+            currentList.style.height = `${department.offsetHeight}px`;
             
             // Обрабатываем клик по направлению
             currentList.addEventListener('click', () => {
-                items.forEach((item) => {
-                    if (!item.classList.contains('vacancies__department')) {
-                        this.slideToggle(item);
-                    }
-                });
+                // items.forEach((item) => {
+                //     if (!item.classList.contains('vacancies__department')) {
+                //         this.slideToggle(item);
+                //     }
+                // });
+                currentList.classList.toggle('active');
+                
+                if (currentList.classList.contains('active')) {
+                    currentList.style.height = `${currentList.dataset.heightOpen}px`;
+                } else {
+                    currentList.style.height = `${currentList.dataset.heightClosed}px`;
+                }
             });
+        }
+
+        window.addEventListener('resize', debounce(this.calcVacanciesListHeight.bind(this), 200));
+    }
+
+    calcVacanciesListHeight() {
+        const vacanciesLists = this.root.querySelectorAll('.vacancies__list');
+
+        for (let i = 0; i < vacanciesLists.length; i++) {
+            const currentList = vacanciesLists[i];
+            const department = currentList.querySelector('.vacancies__department');
+            
+            currentList.style.height = 'auto';
+            currentList.dataset.heightOpen = currentList.offsetHeight;
+            currentList.dataset.heightClosed = department.offsetHeight;
+            
+            if (!currentList.classList.contains('active')) {
+                currentList.style.height = `${currentList.dataset.heightClosed}px`;
+            }
         }
     }
 
