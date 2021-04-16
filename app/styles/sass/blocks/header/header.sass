@@ -9,7 +9,18 @@
 
 .header--main
     position: absolute
-    
+    border: 1px solid rgba(255, 255, 255, .1)
+    background-color: transparent
+
+    + main.home
+        padding-top: 0
+
+    .container
+        +media($desktop-md)
+            max-width: 1080px
+
+    .header__holder
+        min-height: 77px
 
 .header__holder
     display: flex

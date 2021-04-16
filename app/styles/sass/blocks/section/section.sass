@@ -7,6 +7,15 @@
     +media($mobile-lg)
         padding: 48px 0
 
+.section__video-bg
+    position: absolute
+    z-index: -2
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
 .section__title-link
     color: $textcolor
     text-decoration: none
@@ -169,72 +178,7 @@
     &:hover
         color: $accent
 
-// Achievements Section
-
-.section--achievements
-    padding: 64px 0 57px
-    background-color: #f7f6f4
-
-// End Achievements Section
-
 // Home page sections
-.section--results
-    position: relative
-    padding: 48px 0 176px
-
-    +media(1336px)
-        padding: 3.5928vw 0 13.17365vw
-
-    +media($mobile-lg)
-        padding-bottom: 78px
-
-    +media($mobile-sm)
-        padding-bottom: 48px
-
-    .section__title
-        position: relative
-        margin-bottom: 65px
-        font-size: 80px
-        font-weight: bold
-        line-height: 1.1
-
-        +media(1336px)
-            margin-bottom: 4.86525vw
-            font-size: 5.9881vw
-
-        +media($mobile-lg)
-            margin-bottom: 8.228vw
-
-        +media($mobile-sm)
-            margin-bottom: 11.7vw
-            padding-right: 3vw
-            font-size: 8.41vw
-            line-height: $lineheight
-
-            br
-                display: none
-
-        // +media($mobile-md)
-
-        &::after
-            content: ''
-            position: absolute
-            bottom: -30px
-            left: 0
-            width: 45px
-            height: 2px
-            background-color: $textcolor
-
-            +media(1336px)
-                bottom: -2.2vw
-                width: 3.4vw
-
-            +media($mobile-lg)
-                bottom: -3.418vw
-
-            +media($mobile-sm)
-                width: 5.4vw
-                bottom: -4.81vw
 
 .section--products
     padding-top: 128px
@@ -373,6 +317,77 @@
                 width: unset
                 max-height: 170px
                 transform: translateX(-50%)
+
+// Intro Section
+
+.section--intro
+    position: relative
+    z-index: 1
+    box-sizing: border-box
+    min-height: 100vh
+    padding-top: 232px
+    padding-bottom: 40px
+    color: #fff
+
+    +media($desktop-md)
+        padding-top: 239px
+
+    +media($laptop-sm)
+        padding-top: 212px
+
+    &::before 
+        content: ''
+        position: absolute
+        z-index: -1
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        background: rgba(0, 0, 0, .6)
+
+    .container
+
+        +media($desktop-md)
+            max-width: 1080px
+
+        +media($laptop-sm)
+            max-width: 730px
+
+    .section__title
+        margin-bottom: 27px
+        color: #ffffff
+        font-weight: 900
+        font-size: 64px
+        line-height: 1.27
+        letter-spacing: .8px
+
+        +media($desktop-md)
+            margin-bottom: 22px
+            font-size: 58px
+
+        +media($laptop-sm)
+            margin-bottom: 20px
+            font-size: 44px
+            letter-spacing: 0.5px
+
+    .section__content
+        max-width: 958px
+
+// Achievements Section
+
+.section--achievements
+    padding: 64px 0 57px
+    background-color: #f7f6f4
+
+    +media($laptop-sm)
+        padding: 47px 0 44px
+
+    .container
+        +media($desktop-md)
+            max-width: 1080px
+        
+        +media($laptop-sm)
+            max-width: 730px
 
 // Home page sections end
 
