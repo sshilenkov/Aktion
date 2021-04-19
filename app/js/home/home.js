@@ -14,7 +14,7 @@ export default class Home {
         this.initSlider('.technologies');
         this.initSlider('.cooperation');
         this.initProducts();
-
+        this.handleIntroCategory();
         // this.directionsToggler();
 
         this.initLax();
@@ -191,6 +191,24 @@ export default class Home {
                     }
                 ]
             }
+        });
+    }
+
+    handleIntroCategory () {
+        const $root = $('.intro-category');
+        const $button = $root.find('.intro-category__all');
+
+        $button.on('click', function () {
+            const $parent = $(this).parent();
+            const $hiddenBlocks = $parent.find('.intro-category__item:nth-child(n + 5)');
+
+            if ($parent.hasClass('intro-category--all-visible')) {
+                $hiddenBlocks.get().reverse().forEach((el, i) => $(el).fadeOut(i * 100));
+            } else {
+                $hiddenBlocks.each((i, el) => $(el).fadeIn(i * 100));
+            }
+
+            $(this).parent().toggleClass('intro-category--all-visible');
         });
     }
 }
