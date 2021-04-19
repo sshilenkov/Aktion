@@ -6,15 +6,15 @@ import Swiper, { Mousewheel, Pagination, Autoplay, EffectFade } from 'swiper';
 class History {
     constructor(root) {
         this.root = root;
-
+        this.menu = this.root.querySelector('.history__menu');
+        
         // init page
         this.init();
-
+        
         // menu values
         this.visibleMenuItemsCount = 6;
         this.menuItemSize = 52;
         this.offset = this.menuItemSize * 2;
-        this.menu = this.root.querySelector('.history__menu');
         this.menuItems = this.menu.querySelectorAll('li');
 
         this.initMenu();
@@ -24,28 +24,28 @@ class History {
         this.title = this.root.querySelector('.history__title');
         const titleYear = this.title.querySelector('h3');
         const years = this.root.querySelectorAll('.history__year');
-        const menu = this.root.querySelector('.history__menu');
         let naviArr = [];
 
         years.forEach((year, index) => {
             const yearVal = year.getAttribute('data-anchor');
+            const slides = year.querySelectorAll('.history__event');
 
             // push years to array
             naviArr.push(yearVal);
 
-            // create new menu item, link and textNode
-            const menuItem = document.createElement('li');
-            const insideLink = document.createElement('a');
-            const textNode = document.createTextNode(yearVal);
-            // modify link
-            insideLink.href = `#${yearVal}`;
-            insideLink.appendChild(textNode);
-            // modify menu item
-            menuItem.dataset.menuanchor = yearVal;
-            index === 0 && menuItem.classList.add('active');
-            menuItem.appendChild(insideLink);
+            this.createMenuItems(yearVal, index);
 
-            menu.appendChild(menuItem);
+            if (slides.length) {
+                slides.forEach((item, i) => {
+                    const content = item.querySelector('.history__content');
+                    
+                    if (content) {
+                        const progress = content.querySelector('.history__progress');
+                        
+                        progress && (progress.innerHTML = `0${i + 1}/0${slides.length}`);
+                    }
+                });
+            }
         });
 
         const history = new fullpage('.history__body', {
@@ -110,17 +110,76 @@ class History {
         })
     }
 
+    createMenuItems(yearVal, index) {
+        // create new menu item, link and textNode
+        const menuItem = document.createElement('li');
+        const insideLink = document.createElement('a');
+        const textNode = document.createTextNode(yearVal);
+        // modify link
+        insideLink.href = `#${yearVal}`;
+        insideLink.appendChild(textNode);
+        // modify menu item
+        menuItem.dataset.menuanchor = yearVal;
+        index === 0 && menuItem.classList.add('active');
+        menuItem.appendChild(insideLink);
+
+        this.menu.appendChild(menuItem);
+    }
+
     initMenu() {
         this.menu.style.height = `${this.visibleMenuItemsCount * this.menuItemSize}px`;
         this.menuItems.forEach((item) => {
             item.style.top = `${this.offset}px`;
+
+            // change opacity for all elements
+            item.style.opacity = 0.15;
         });
+
+        this.changeYearsOpacity();
     }
 
     recalcMenu(activeYearIndex) {
         this.menuItems.forEach((item, index) => {
             item.style.top = `${this.offset - (activeYearIndex * this.menuItemSize)}px`;
+
+            // change opacity for all elements
+            item.style.opacity = 0.15;
         });
+
+        this.changeYearsOpacity(activeYearIndex);
+    }
+
+    changeYearsOpacity(activeYearIndex) {
+        // change opacity for every element relative to his position
+        const active = activeYearIndex ? this.menuItems[activeYearIndex] : this.root.querySelector('.history__menu > .active');
+        const prevEl = active.previousSibling.nodeType == 1 ? active.previousSibling : null;
+        const prePrevEl = prevEl && prevEl.previousSibling && prevEl.previousSibling.nodeType == 1 ? prevEl.previousSibling : null;
+        const nextEl = active.nextSibling.nodeType == 1 ? active.nextSibling : null;
+        const afterNextEl = nextEl && nextEl.nextSibling && nextEl.nextSibling.nodeType == 1 ? nextEl.nextSibling : null;
+
+        // console.log('active', prePrevEl.nodeType)
+        prevEl && (prevEl.style.opacity = 0.75);
+        prePrevEl && (prePrevEl.style.opacity = 0.35);
+        nextEl && (nextEl.style.opacity = 0.75);
+        afterNextEl && (afterNextEl.style.opacity = 0.35);
+    }
+
+    restartAnimation(node) {
+        // restart CSS animations
+        node.classList.remove('js-animation-start');
+        void node.offsetWidth; // -> triggering reflow /* The actual magic */
+        node.classList.add('js-animation-start');
+    }
+    
+    waitYearAnimationEnd(event) {
+        if (event) {
+            const content = event.querySelector('.history__content');
+
+            this.title.addEventListener('animationend', () => {
+                content && content.classList.add('js-content-animation');
+                fullpage_api.setAllowScrolling(true);
+            }, {once: true});
+        }
     }
 
     initHistory() {
@@ -301,23 +360,7 @@ class History {
         });
     }
 
-    restartAnimation(node) {
-        // restart CSS animations
-        node.classList.remove('js-animation-start');
-        void node.offsetWidth; // -> triggering reflow /* The actual magic */
-        node.classList.add('js-animation-start');
-    }
-    
-    waitYearAnimationEnd(event) {
-        if (event) {
-            const content = event.querySelector('.history__content');
 
-            this.title.addEventListener('animationend', () => {
-                content && content.classList.add('js-content-animation');
-                fullpage_api.setAllowScrolling(true);
-            }, {once: true});
-        }
-    }
 
     // slideChange() {
     //     this.timeoutID && clearTimeout(this.timeoutID);

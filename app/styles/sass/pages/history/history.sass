@@ -277,8 +277,11 @@ main.history
         position: relative
         padding: 16px 0
         font-size: 16px
+        transition: all 1s
 
         &.active
+            opacity: 1 !important
+
             & > a
                 color: $accent
 
@@ -376,7 +379,7 @@ main.history
 
     +media($mobile-lg)
         top: unset
-        bottom: 0
+        bottom: -40px
         left: 100px
         max-width: 320px
 
