@@ -603,17 +603,20 @@
 
     .section__title
         margin-bottom: 42px
-        font-size: 110px
+        font-size: 94px
         font-weight: bold
         line-height: 1.05
 
+        +media($desktop-sm)
+            font-size: 82px
+
         +media($tablet)
             margin-bottom: 32px
-            font-size: 74px
+            font-size: 54px
 
         +media($mobile-lg)
             margin-bottom: 0
-            font-size: 33px
+            font-size: 36px
 
         +media(368px)
             br
@@ -803,7 +806,7 @@
             // margin-bottom: 16px
 
     .section__content
-        width: 826px
+        width: 840px
         margin-left: auto
 
         +media($tablet)
