@@ -192,28 +192,8 @@
             // font-size: 3.6vw
 
         +media($mobile-lg)
-
             margin-bottom: 22px
-
             // font-size: 7.5vw
-
-.section--directions
-    padding-bottom: 0
-
-    +media($mobile-lg)
-        padding-top: 78px
-
-    +media($mobile-sm)
-        padding-top: 48px
-
-    .section__rubric
-        margin-bottom: 64px
-
-        +media($tablet)
-            margin-bottom: 42px
-
-        +media($mobile-lg)
-            margin-bottom: 18px
 
 .section--news
 
@@ -332,8 +312,11 @@
     +media($desktop-md)
         padding-top: 239px
 
-    +media($laptop-sm)
+    +media(991px)
         padding-top: 212px
+
+    +media($mobile-md)
+        padding-top: 124px
 
     &::before 
         content: ''
@@ -346,12 +329,8 @@
         background: rgba(0, 0, 0, .6)
 
     .container
-
-        +media($desktop-md)
-            max-width: 1080px
-
-        +media($laptop-sm)
-            max-width: 730px
+        +media($mobile-sm)
+            padding-right: 15px
 
     .section__title
         margin-bottom: 27px
@@ -365,10 +344,15 @@
             margin-bottom: 22px
             font-size: 58px
 
-        +media($laptop-sm)
+        +media(991px)
             margin-bottom: 20px
             font-size: 44px
             letter-spacing: 0.5px
+
+        +media($mobile-md)
+            margin-bottom: 7px
+            font-size: 28px
+            line-height: 1.3
 
     .section__content
         max-width: 958px
@@ -379,15 +363,11 @@
     padding: 64px 0 57px
     background-color: #f7f6f4
 
-    +media($laptop-sm)
+    +media(1024px)
         padding: 47px 0 44px
 
-    .container
-        +media($desktop-md)
-            max-width: 1080px
-        
-        +media($laptop-sm)
-            max-width: 730px
+    +media($mobile-lg)
+        padding-top: 44px
 
 // Home page sections end
 

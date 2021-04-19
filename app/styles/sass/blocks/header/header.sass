@@ -6,6 +6,7 @@
     z-index: 9
     border-bottom: 2px solid $bg-first
     background-color: #fff
+    transition: 400ms
 
 .header--main
     position: absolute
@@ -15,12 +16,28 @@
     + main.home
         padding-top: 0
 
-    .container
-        +media($desktop-md)
-            max-width: 1080px
-
     .header__holder
         min-height: 77px
+
+        +media($mobile-lg)
+            min-height: 50px
+
+    .header__logo svg path
+        fill: #ff6854
+        transition: fill 300ms
+        
+    .header__links > li > a:hover,
+    .header__links > li.header__active > a
+        color: #ff6854
+
+
+
+.header--fixed
+    position: fixed
+    background-color: #fff
+
+    .header__logo svg path
+        fill: #f1361d
 
 .header__holder
     display: flex
