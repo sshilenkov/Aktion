@@ -42,7 +42,7 @@ class History {
                     if (content) {
                         const progress = content.querySelector('.history__progress');
                         
-                        progress && (progress.innerHTML = `0${i + 1}/0${slides.length}`);
+                        progress && (progress.innerHTML = `0${i + 1} / 0${slides.length}`);
                     }
                 });
             }
@@ -151,10 +151,10 @@ class History {
 
     changeYearsOpacity(activeYearIndex) {
         // change opacity for every element relative to his position
-        const active = activeYearIndex ? this.menuItems[activeYearIndex] : this.root.querySelector('.history__menu > .active');
+        const active = Number.isInteger(activeYearIndex) ? this.menuItems[activeYearIndex] : this.root.querySelector('.history__menu > .active');
         const prevEl = active.previousSibling.nodeType == 1 ? active.previousSibling : null;
         const prePrevEl = prevEl && prevEl.previousSibling && prevEl.previousSibling.nodeType == 1 ? prevEl.previousSibling : null;
-        const nextEl = active.nextSibling.nodeType == 1 ? active.nextSibling : null;
+        const nextEl = active.nextSibling && active.nextSibling.nodeType == 1 ? active.nextSibling : null;
         const afterNextEl = nextEl && nextEl.nextSibling && nextEl.nextSibling.nodeType == 1 ? nextEl.nextSibling : null;
 
         // console.log('active', prePrevEl.nodeType)
