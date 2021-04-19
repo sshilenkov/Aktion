@@ -15,7 +15,6 @@ export default class Home {
         this.initSlider('.cooperation');
         this.initProducts();
         this.handleIntroCategory();
-        // this.directionsToggler();
 
         this.initLax();
         
@@ -134,40 +133,6 @@ export default class Home {
         } else {
             setTimeout(() => this.playVideo(DOMnode), 500)
         }
-    }
-
-    directionsToggler() {
-        const directionsBlock = this.root.getElementsByClassName('directions')[0];
-        const toggler = this.root.getElementsByClassName('section__toggler')[0];
-        const directionsList = directionsBlock.getElementsByClassName('directions__item');
-        
-        let nativeHeight;
-        function resize() {
-            if (window.innerWidth < 791) {
-                if (directionsList && directionsList.length && directionsList.length > 8) {
-                    !nativeHeight && (nativeHeight = directionsBlock.offsetHeight); // определяем высоту блока один раз, пока его высота полная
-                    let rolledHeight = directionsList[7].offsetTop;
-                    
-                    directionsBlock.style.cssText = `height: ${rolledHeight}px;`;
-                    toggler.style.cssText = 'display: block;';
-                    toggler.onclick = () => {
-                        if (directionsBlock.style.height == `${rolledHeight}px`) {
-                            directionsBlock.style.cssText = `height: ${nativeHeight}px`;
-                            toggler.textContent = 'Свернуть';
-                        } else if (directionsBlock.style.height == `${nativeHeight}px`) {
-                            directionsBlock.style.cssText = `height: ${rolledHeight}px`;
-                            toggler.textContent = 'Показать все';
-                        }
-                    }
-                }
-            } else {
-                directionsBlock.style.cssText = `height: unset;`;
-                toggler.style.cssText = 'display: none;';
-            }
-        }
-
-        window.onload = resize;
-        window.addEventListener('resize', debounce(resize, 200));
     }
 
     initLax() {
