@@ -82,7 +82,7 @@ export default class Career {
                         gsap.to('.people', {
                             x: 0,
                             y: 0,
-                            duration: 4,
+                            duration: 2,
                             ease: 'linear',
                         });
                     }

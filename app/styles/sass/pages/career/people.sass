@@ -128,9 +128,15 @@
     +mediaHeight(800px)
         top: -33%
 
+        .people__description
+            bottom: -8%
+
     +media($mobile-lg)
         top: calc(50% - 299px)
         left: calc(50% - 80px)
+
+    @media screen and (max-width: 1366px) and (height: 657px)
+        top: -38%
 
 .people__holder--2
     top: -4%
@@ -146,6 +152,10 @@
 .people__holder--3
     top: 32%
     left: 89%
+
+    +mediaHeight(800px)
+        .people__description
+            bottom: -8%
 
     +media($mobile-lg)
         top: calc(50% - 50px)
@@ -163,9 +173,15 @@
     top: 80%
     left: 53%
 
+    +mediaHeight(800px)
+        top: 83%
+
     +media($mobile-lg)
         top: calc(50% + 145px)
         left: calc(50% - 40px)
+
+    @media screen and (width: 1366px) and (height: 659px)
+        top: 86%
 
 .people__holder--6
     top: 87%
@@ -178,6 +194,9 @@
 .people__holder--7
     top: 27%
     left: -7%
+
+    +mediaHeight(800px)
+        top: 22%
 
     +media($mobile-lg)
         top: calc(50% - 85px)

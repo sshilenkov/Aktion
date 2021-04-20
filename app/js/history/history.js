@@ -1,3 +1,5 @@
+import './fullpage.fadingEffect.min.js';
+import './fullpage.resetSliders.min.js';
 import './fullpage.scrollHorizontally.min.js';
 import fullpage from 'fullpage.js/dist/fullpage.extensions.min';
 
@@ -52,6 +54,11 @@ class History {
             licenseKey: '585AABEF-A34F4858-B9D25A15-EBFB0DFC',
             scrollHorizontallyKey: '549A9BCA-78B44790-9A30769A-85C95E14',
             scrollHorizontally: true,
+            loopHorizontal: false,
+            fadingEffectKey: '7094CEE4-10D1469A-BC894C66-72A00F67',
+            fadingEffect: true,
+            resetSlidersKey: '78E195F9-C99C467C-92CB0D51-3C875BCB',
+            resetSliders: true,
             sectionSelector: '.history__year',
             slideSelector: '.history__event',
             controlArrows: false,
@@ -70,12 +77,12 @@ class History {
                 this.waitYearAnimationEnd(firstEvent);
             },
             onLeave: (origin, destination) => {
-                const originContents = origin.item.querySelectorAll('.history__content');
+                const destinationContents = destination.item.querySelectorAll('.history__content');
                 const destinationItem = destination.item;
                 const destinationEvents = destinationItem.querySelectorAll('.history__event');
 
                 // remove content from events
-                originContents.forEach((content) => {
+                destinationContents.forEach((content) => {
                     content.classList.remove('js-content-animation');
                 });
 
@@ -157,7 +164,6 @@ class History {
         const nextEl = active.nextSibling && active.nextSibling.nodeType == 1 ? active.nextSibling : null;
         const afterNextEl = nextEl && nextEl.nextSibling && nextEl.nextSibling.nodeType == 1 ? nextEl.nextSibling : null;
 
-        // console.log('active', prePrevEl.nodeType)
         prevEl && (prevEl.style.opacity = 0.75);
         prePrevEl && (prePrevEl.style.opacity = 0.35);
         nextEl && (nextEl.style.opacity = 0.75);
