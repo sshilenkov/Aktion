@@ -160,20 +160,22 @@ export default class Home {
     }
 
     handleIntroCategory () {
-        const $root = $('.intro-category');
-        const $button = $root.find('.intro-category__all');
-
+        const $section = $(this.root).find('.section.section--intro');
+        const $intro = $('.intro-category');
+        const $button = $intro.find('.intro-category__all');
+        
         $button.on('click', function () {
             const $parent = $(this).parent();
             const $hiddenBlocks = $parent.find('.intro-category__item:nth-child(n + 5)');
 
             if ($parent.hasClass('intro-category--all-visible')) {
-                $hiddenBlocks.get().reverse().forEach((el, i) => $(el).fadeOut(i * 100));
+                $hiddenBlocks.hide();
             } else {
                 $hiddenBlocks.each((i, el) => $(el).fadeIn(i * 100));
             }
 
-            $(this).parent().toggleClass('intro-category--all-visible');
+            $section.toggleClass('section--open-category');
+            $parent.toggleClass('intro-category--all-visible');
         });
     }
 }

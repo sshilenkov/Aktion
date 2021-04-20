@@ -10,7 +10,7 @@
 
 .header--main
     position: absolute
-    border: 1px solid rgba(255, 255, 255, .1)
+    border: 2px solid rgba(255, 255, 255, .1)
     background-color: transparent
 
     + main.home
@@ -30,10 +30,16 @@
     .header__links > li.header__active > a
         color: #ff6854
 
+.header--open-hamburger
+    background-color: #ffffff
+    transition: background-color 300ms
 
+    .header__logo svg path 
+        fill: $accent
 
 .header--fixed
     position: fixed
+    border-bottom: 2px solid $bg-first
     background-color: #fff
 
     .header__logo svg path
