@@ -1,8 +1,5 @@
 .achievements
   
-  +media($mobile-md)
-    padding: 0 3px
-  
   &__period
     margin-bottom: 32px
     color: $accent
@@ -15,7 +12,6 @@
 
     +media($mobile-lg)
       margin-bottom: 22px
-      font-size: 16px
 
   &__items
     display: flex
@@ -24,7 +20,7 @@
     +media($mobile-lg)
       display: grid
       grid-template-columns: repeat(2, 1fr)
-      grid-gap: 30px 26px
+      grid-gap: 30px 18px
 
   &__item
     max-width: 187px
@@ -65,7 +61,8 @@
 
     +media($mobile-lg)
       position: relative
-      border-bottom: 0
+      font-size: 13px
+      // border-bottom: 0
     
     &::after
       content: ''
@@ -78,7 +75,7 @@
       background-color: rgba($second-text-color, .5)
 
       +media($mobile-lg)
-        display: block
+        // display: block
 
   &__value
     color: $textcolor
@@ -90,4 +87,4 @@
       line-height: 1.25
 
     +media($mobile-lg)
-      font-size: 26px
+      font-size: 28px
