@@ -6,83 +6,6 @@ main.history
     padding: 0
     background-color: #001324
 
-.history__close
-    position: absolute
-    top: 60px
-    right: 80px
-    z-index: 99
-    display: block
-    width: 13px
-    height: 13px
-    padding: 10px
-
-    +media($tablet)
-        top: 40px
-        right: 60px
-
-    +media($mobile-lg)
-        top: 30px
-        right: 40px
-
-    +media($mobile-sm)
-        top: 20px
-        right: 20px
-
-    &::before
-        content: ''
-        position: absolute
-        display: block
-        width: 18px
-        height: 2px
-        background-color: #fff
-        transform: rotate(45deg) translate(11%, 280%)
-
-    &::after
-        content: ''
-        position: absolute
-        display: block
-        width: 18px
-        height: 2px
-        background-color: #fff
-        transform: rotate(-45deg) translate(-31%,102%)
-
-.history__menu
-    position: absolute
-    top: 50vh
-    left: 58px
-    z-index: 95
-    overflow: hidden
-    transform: translateY(-50%)
-
-    +media($desktop-sm)
-        left: 3.7%
-
-    +media($mobile-lg)
-        left: 22px
-
-    & > li
-        position: relative
-        padding: 16px 0
-        font-size: 16px
-        transition: all 1s
-
-        &.active
-            opacity: 1 !important
-
-            & > a
-                color: #FF6854
-
-        & > a
-            color: #fff
-            text-decoration: none
-            transition: all 1s
-
-        +media($tablet)
-            font-size: 14px
-
-.history__body
-    z-index: 2
-
     &::after
         content: ''
         position: absolute
@@ -100,6 +23,87 @@ main.history
         +media($mobile-lg)
             left: 72px
 
+.history__close
+    position: absolute
+    top: 40px
+    right: 60px
+    z-index: 99
+    display: block
+
+    +media($tablet)
+        top: 30px
+        right: 50px
+
+    +media($mobile-lg)
+        top: 20px
+        right: 30px
+
+    +media($mobile-sm)
+        top: 20px
+        right: 20px
+
+    & svg
+        display: block
+
+        +media($tablet)
+            width: 40px
+            height: 40px
+
+        +media($mobile-md)
+            width: 30px
+            height: 30px
+
+        &:hover
+            circle
+                stroke: $light-accent
+
+            path
+                fill: $light-accent
+
+        circle
+            transition: stroke .3s
+
+        path
+            transition: fill .3s
+
+.history__menu
+    position: absolute
+    top: 50vh
+    left: 58px
+    z-index: 95
+    overflow: hidden
+    transform: translateY(-50%)
+
+    +media($desktop-sm)
+        left: 3.7%
+
+    +media($mobile-lg)
+        top: calc(50vh - 30px)
+        left: 22px
+
+    & > li
+        position: relative
+        padding: 16px 0
+        font-size: 16px
+        transition: all 1s
+        transform: translate3d(0px, 0px, 0px) // safari fix animation
+
+        &.active
+            opacity: 1 !important
+
+            & > a
+                color: $light-accent
+
+        & > a
+            color: #fff
+            text-decoration: none
+            transition: all 1s
+
+        +media($tablet)
+            font-size: 14px
+
+.history__body
+    z-index: 2
 
 .history__event
     position: relative
@@ -188,6 +192,16 @@ main.history
         right: unset
         left: 100px
 
+.history__video
+    position: absolute
+    top: 0
+    right: 0
+    bottom: 0
+    left: 0
+    width: 100%
+    height: 100%
+    object-fit: cover
+
 .history__rubric
     display: flex
     align-items: center
@@ -214,7 +228,7 @@ main.history
         font-size: 20px
 
     +media($mobile-sm)
-        font-size: 14px
+        font-size: 18px
 
 .history__progress
     margin-top: 40px
@@ -324,6 +338,7 @@ main.history
         animation-duration: $animation-duration
         animation-delay: .5s
         animation-timing-function: cubic-bezier(0, 0.98, 1, 1)
+        transform: translate3d(0px, 0px, 0px) // safari fix animation
 
         +media($mobile-md)
             animation-name: titleMobile

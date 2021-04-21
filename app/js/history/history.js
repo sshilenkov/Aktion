@@ -19,6 +19,10 @@ class History {
         this.offset = this.menuItemSize * 2;
         this.menuItems = this.menu.querySelectorAll('li');
 
+        if (window.innerWidth < 1144) {
+            this.menuItemSize = 49;
+        }
+
         this.initMenu();
     }
 
@@ -54,9 +58,10 @@ class History {
             licenseKey: '585AABEF-A34F4858-B9D25A15-EBFB0DFC',
             scrollHorizontallyKey: '549A9BCA-78B44790-9A30769A-85C95E14',
             scrollHorizontally: true,
+            scrollingSpeed: 1000,
             loopHorizontal: false,
             fadingEffectKey: '7094CEE4-10D1469A-BC894C66-72A00F67',
-            fadingEffect: true,
+            fadingEffect: 'slides',
             resetSlidersKey: '78E195F9-C99C467C-92CB0D51-3C875BCB',
             resetSliders: true,
             sectionSelector: '.history__year',
@@ -107,12 +112,12 @@ class History {
             },
             onSlideLeave: (section, origin, destination) => {
                 const originContent = origin.item.querySelector('.history__content');
-                const destcontent = destination.item.querySelector('.history__content');
+                const destContent = destination.item.querySelector('.history__content');
                 
                 // manage content display on slide chage
                 originContent.classList.remove('js-content-animation');
-                destcontent.style.transitionDelay = '0.5s';
-                destcontent.classList.add('js-content-animation');
+                destContent.style.transitionDelay = '0.5s';
+                destContent.classList.add('js-content-animation');
             }
         })
     }
@@ -136,7 +141,7 @@ class History {
     initMenu() {
         this.menu.style.height = `${this.visibleMenuItemsCount * this.menuItemSize}px`;
         this.menuItems.forEach((item) => {
-            item.style.top = `${this.offset}px`;
+            item.style.transform = `translateY(${this.offset}px)`;
 
             // change opacity for all elements
             item.style.opacity = 0.15;
@@ -147,7 +152,7 @@ class History {
 
     recalcMenu(activeYearIndex) {
         this.menuItems.forEach((item, index) => {
-            item.style.top = `${this.offset - (activeYearIndex * this.menuItemSize)}px`;
+            item.style.transform = `translateY(${this.offset - (activeYearIndex * this.menuItemSize)}px)`;
 
             // change opacity for all elements
             item.style.opacity = 0.15;
