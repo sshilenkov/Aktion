@@ -26,11 +26,16 @@
       margin-bottom: 26px
 
     +media($mobile-md)
+      justify-content: center
       width: 370px
+      margin: 0 auto 26px
 
   &__item
     margin-top: var(--m-item)
     margin-left: var(--m-item)
+
+    +media($mobile-md)
+      margin: 16px 8px 0
 
     &:not(:nth-child(-n + 4))
       display: none
@@ -119,6 +124,9 @@
       padding-left: 9px
       border-radius: 5px
       font-size: 14px
+
+    +media($mobile-md)
+      margin: 0 auto
 
     &:hover
       border-color: $light-accent
