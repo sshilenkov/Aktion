@@ -5,3 +5,5 @@
 /**/package-lock.json
 /**/debug.log
 /**/video/
+/app/js/app.min.js
+/app/css/main.min.css
