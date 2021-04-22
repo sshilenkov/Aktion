@@ -40,6 +40,9 @@
     display: flex
     justify-content: space-between
 
+    +media($mobile-sm)
+        flex-direction: column
+
 .one-news__secondary-illustration
     &:not(:last-child)
         margin-right: 24px
@@ -50,6 +53,13 @@
 
         &:not(:last-child)
             margin-right: 0
+
+    +media($mobile-sm)
+        width: 100%
+        margin-right: 0
+        
+        &:not(:last-child)
+            margin-bottom: 16px
 
 .one-news__socials
     margin: 60px 0 132px
