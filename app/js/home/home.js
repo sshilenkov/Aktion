@@ -77,6 +77,7 @@ export default class Home {
                 }
 
                 videoNodes[idx].play();
+                videoNodes[idx].setAttribute('loop', 'loop');
 
                 if (window.innerWidth < 641) {
                     list.scroll({
