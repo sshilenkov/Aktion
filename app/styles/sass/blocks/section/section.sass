@@ -144,11 +144,12 @@
         +media($mobile-lg)
             margin-bottom: 24px
 
-    .section__content-link
-        color: #fff
+    .section__content-link,
+    .section__content-link a
+        color: $light-accent
 
         &:hover
-            color: $light-accent
+            color: #fff
     
 
 .section__date
@@ -175,13 +176,14 @@
         +media($mobile-lg)
             height: 2px
 
-.section__content-link
-    color: $textcolor
+.section__content-link,
+.section__content-link a
+    color: $accent
     text-decoration: none
     transition: color .3s
 
     &:hover
-        color: $accent
+        color: $textcolor
 
 // Home page sections
 
@@ -282,14 +284,12 @@
 
     .section__link
         +media($mobile-lg)
-            display: none
+            display: block
+            margin-top: 16px
 
 .section--cooperation
     +media($mobile-lg)
         padding-top: 61px
-
-    .section__content-link
-        color: $second-accent
 
 .section--ad
     .section__title
@@ -519,6 +519,10 @@
 
     .section__rubric
         margin-bottom: 15px
+        margin-left: -2px
+
+        +media($tablet)
+            margin-left: -1px
 
         +media($mobile-lg)
             margin-bottom: 8px
@@ -550,19 +554,23 @@
 
     .section__title
         margin-bottom: 42px
+        margin-left: -5px
         font-size: 94px
         line-height: 1
 
         +media($desktop-sm)
+            margin-left: -3px
             font-size: 82px
 
         +media($tablet)
             margin-bottom: 34px
+            margin-left: -2px
             font-size: 54px
 
         +media($mobile-lg)
             max-width: 75%
             margin-bottom: 20px
+            margin-left: -1px
             font-size: 36px
 
         +media($mobile-sm)

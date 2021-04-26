@@ -78,13 +78,11 @@ export default class Home {
 
                 videoNodes[idx].play();
                 videoNodes[idx].setAttribute('loop', 'loop');
-
+                
                 if (window.innerWidth < 641) {
-                    list.scroll({
-                        top: 0,
-                        left: item.offsetLeft,
-                        behavior: 'smooth'
-                    })
+                    $(list).animate({
+                        scrollLeft: item.offsetLeft
+                    }, 'slow');
                 }
             }, false);
         });

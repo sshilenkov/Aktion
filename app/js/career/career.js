@@ -12,7 +12,7 @@ export default class Career {
         this.addClasses();
         this.initParallax();
         this.vacanciesAnchor();
-        this.calcConditionsImgHeight();
+        // this.calcConditionsImgHeight();
         this.initTabs();
         this.initVacancies();
 

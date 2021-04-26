@@ -13,6 +13,16 @@
 
 .career__img
     position: absolute
+    width: 186px
+    padding-bottom: 251px
+
+    +media($tablet)
+        width: 145px
+        padding-bottom: 195px
+
+    +media($mobile-lg)
+        width: 91px
+        padding-bottom: 123px
 
     & > img
         position: absolute
@@ -27,21 +37,27 @@
 .career__img--top
     top: -358px
     left: 900px
-    width: 352px
-    padding-bottom: 213px
 
     +media($tablet)
         top: -250px
         left: 620px
-        width: 275px
-        padding-bottom: 166px
 
     +media($mobile-lg)
         top: calc(100% + 43px)
         left: 50%
-        width: 172px
-        padding-bottom: 105px
         transform: translateX(-63%)
+
+    &.career__img--horizontal
+        width: 352px
+        padding-bottom: 213px
+
+        +media($tablet)
+            width: 275px
+            padding-bottom: 166px
+
+        +media($mobile-lg)
+            width: 172px
+            padding-bottom: 105px
 
 .career__img--right
     top: -179px
@@ -60,7 +76,18 @@
         left: 80%
         width: 91px
         padding-bottom: 123px
-        // transform: translateX(92%)
+
+    &.career__img--horizontal
+        width: 352px
+        padding-bottom: 213px
+
+        +media($tablet)
+            width: 275px
+            padding-bottom: 166px
+
+        +media($mobile-lg)
+            width: 172px
+            padding-bottom: 105px
 
 .career__img--center
     top: -55px
@@ -81,6 +108,18 @@
         padding-bottom: 105px
         transform: translateX(-50%)
 
+    &.career__img--horizontal
+        width: 352px
+        padding-bottom: 213px
+
+        +media($tablet)
+            width: 275px
+            padding-bottom: 166px
+
+        +media($mobile-lg)
+            width: 172px
+            padding-bottom: 105px
+
 .career__img--left
     top: 53px
     left: 739px
@@ -100,21 +139,39 @@
         padding-bottom: 145px
         transform: translateX(-100%)
 
+    &.career__img--horizontal
+        width: 352px
+        padding-bottom: 213px
+
+        +media($tablet)
+            width: 275px
+            padding-bottom: 166px
+
+        +media($mobile-lg)
+            width: 172px
+            padding-bottom: 105px
+
 .career__img--bottom
     top: 307px
     left: 1102px
-    width: 415px
-    padding-bottom: 234px
 
     +media($tablet)
         top: 270px
         left: 780px
-        width: 325px
-        padding-bottom: 183px
 
     +media($mobile-lg)
         top: calc(100% + 368px)
         left: 50%
-        width: 203px
-        padding-bottom: 115px
         transform: translateX(-4%)
+
+    &.career__img--horizontal
+        width: 415px
+        padding-bottom: 234px
+
+        +media($tablet)
+            width: 325px
+            padding-bottom: 183px
+
+        +media($mobile-lg)
+            width: 203px
+            padding-bottom: 115px

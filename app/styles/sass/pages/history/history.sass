@@ -123,6 +123,7 @@ main.history
         bottom: 0
         left: 0
         z-index: 2
+        opacity: 0.7
         background: linear-gradient(90deg, #111111 -3.58%, rgba(17, 17, 17, 0.748299) 30.5%, rgba(17, 17, 17, 0.15) 73.15%)
         animation-duration: $animation-duration
         animation-timing-function: linear
@@ -174,7 +175,7 @@ main.history
 
     +media($mobile-lg)
         top: unset
-        bottom: -40px
+        bottom: -80px
         left: 100px
         max-width: 320px
 
@@ -230,6 +231,42 @@ main.history
     +media($mobile-sm)
         font-size: 18px
 
+.history__play
+    margin-top: 30px
+    color: $light-accent
+    font-size: 16px
+    line-height: 1.4
+
+    +media($tablet)
+        font-size: 14px
+
+    +media($mobile-lg)
+        font-size: 12px
+
+    &:hover
+        cursor: pointer
+
+    &::before
+        content: ''
+        display: inline-block
+        width: 12px
+        height: 12px
+        margin-right: 6px
+        box-sizing: border-box
+        border-style: solid
+        border-color: transparent transparent transparent $light-accent
+        border-width: 6px 0 6px 10px
+
+        +media($tablet)
+            width: 10px
+            height: 10px
+            border-width: 5px 0 5px 8px
+
+        +media($mobile-lg)
+            width: 8px
+            height: 9px
+            border-width: 4px 0 4px 6px
+
 .history__progress
     margin-top: 40px
     font-size: 16px
@@ -245,23 +282,28 @@ main.history
         opacity: 0
         
     100%
-        opacity: 1
+        opacity: 0.7
 
 @keyframes startAnimationMainSlide
     0%
+        z-index: 1
         transform: scale(.4) translate(45%, 0%)
         opacity: 0
 
     30%
+        z-index: 5
         opacity: 1
 
     80%
+        z-index: 5
         transform: scale(.4) translate(45%, -55%)
 
     95%
+        z-index: 5
         transform: translate(0%, 0%)
         
     100%
+        z-index: 5
         transform: scale(1)
 
 @keyframes startAnimationSecondSlide
@@ -377,16 +419,41 @@ main.history
 
 @keyframes titleMobile
     0%
-        transform: translateY(100vh)
+        z-index: 2
+        transform: translateY(90vh)
         opacity: 0
 
     10%
-        transform: translateY(55vh)
+        z-index: 2
+        transform: translateY(45vh)
         opacity: 1
+
+    50%
+        z-index: 2
         
     95%
+        z-index: 1
         opacity: 1
         
     100%
-        transform: translateY(30vh)
+        z-index: 1
+        transform: translateY(0vh)
         opacity: 0
+
+.history__popup
+    position: absolute
+    top: 0
+    left: 0
+    z-index: 9999
+    display: none
+    width: 100%
+    height: 100%
+    background: rgba(0, 0, 0, 0.9)
+
+    .history__video
+        top: 50%
+        left: 5%
+        width: 90%
+        height: auto
+        max-height: 100%
+        transform: translateY(-50%)
