@@ -83,6 +83,7 @@ main.history
 
     & > li
         position: relative
+        max-width: 60%
         padding: 16px 0
         font-size: 16px
         transition: all 1s
@@ -185,13 +186,13 @@ main.history
     &.js-content-animation
         opacity: 1
 
-.history__content--alt
-    right: 6%
-    left: unset
+// .history__content--alt
+    // right: 6%
+    // left: unset
 
-    +media($mobile-sm)
-        right: unset
-        left: 100px
+    // +media($mobile-sm)
+    //     right: unset
+    //     left: 100px
 
 .history__video
     position: absolute
@@ -367,7 +368,7 @@ main.history
     position: absolute
     top: 20vh
     left: 16%
-    z-index: 1
+    z-index: 3
     color: #fff
     line-height: 1
     opacity: 0
@@ -410,33 +411,32 @@ main.history
         transform: translateY(25vh)
         opacity: 1
         
-    95%
+    55%
         opacity: 1
         
-    100%
+    80%
         transform: translateY(0)
+        opacity: 0
+
+    100%
         opacity: 0
 
 @keyframes titleMobile
     0%
-        z-index: 2
-        transform: translateY(90vh)
+        transform: translateY(80vh)
         opacity: 0
 
     10%
-        z-index: 2
-        transform: translateY(45vh)
         opacity: 1
 
-    50%
-        z-index: 2
-        
-    95%
-        z-index: 1
+    55%
         opacity: 1
         
+    75%
+        transform: translateY(0vh)
+        opacity: 0
+
     100%
-        z-index: 1
         transform: translateY(0vh)
         opacity: 0
 

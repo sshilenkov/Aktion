@@ -13,6 +13,7 @@ import Contacts from './contacts/contacts';
 import News from './news/news';
 import History from './history/history';
 import Company from './company/company';
+import Management from './management/management';
 
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -36,6 +37,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const company = document.querySelector('main.company');
 	company && new Company(company);
+
+	const management = document.querySelector('main.management');
+	management && new Management(management);
 
 	const footer = document.querySelector('footer.footer');
 	footer && new Footer(footer);

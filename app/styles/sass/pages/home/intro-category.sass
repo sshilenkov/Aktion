@@ -7,7 +7,6 @@
     --m-item: 22px
 
   +media(991px)
-    --m-item: 16px
     flex-direction: column
     align-items: flex-start
     width: 100%
@@ -15,18 +14,18 @@
   &__list
     display: flex
     flex-wrap: wrap
-    width: 870px
+    width: 853px
     margin-left: calc(var(--m-item) * -1)
 
     +media($desktop-md)
-      width: 792px
+      width: 788px
 
     +media(991px)
       width: 620px
       margin-bottom: 26px
 
     +media($mobile-md)
-      width: 370px
+      width: unset
       margin-bottom: 26px
 
   &__item
@@ -57,12 +56,25 @@
       font-size: 18px
 
     +media(991px)
-      min-height: 38px
+      min-height: 50px
+      padding-right: 14px
+      padding-left: 15px
       border-radius: 5px
-      font-size: 13px
+      font-size: 16px
 
     &:hover
       background-color: $light-accent
+
+    &::after
+      content: ''
+      position: relative
+      display: block
+      width: 7px
+      height: 12px
+      margin-left: 12px
+      background-image: url(/images/dist/intro-category/arrow.svg)
+      background-position: center
+      background-repeat: no-repeat
 
   &__img
     display: flex
@@ -72,9 +84,15 @@
     width: 43px
 
     +media(991px)
-      width: 20px
+      width: 18px
       height: 18px
       margin-right: 7px
+
+    +media($mobile-lg)
+      margin-right: 12px
+
+    +media(374px)
+      // display: none
 
   &__icon
     max-width: 100%
@@ -165,9 +183,6 @@
 // #########################
 
 .intro-category--all-visible
-
-  .intro-category__all
-    border-color: $light-accent
 
   .intro-category__close
     transform: rotate(0)

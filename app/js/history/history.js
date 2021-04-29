@@ -16,12 +16,17 @@ class History {
         // menu values
         this.visibleMenuItemsCount = 6;
         this.menuItemSize = 52;
-        this.offset = this.menuItemSize * 2;
         this.menuItems = this.menu.querySelectorAll('li');
-
-        if (window.innerWidth < 1144) {
-            this.menuItemSize = 49;
-        }
+        // this.menuItems.forEach((item) => {
+        //     if (item.offsetHeight > this.menuItemSize) {
+        //         this.menuItemSize = item.offsetHeight;
+        //     }
+        // })
+        this.offset = this.menuItemSize * 2;
+        
+        // if (window.innerWidth < 1144) {
+        //     this.menuItemSize = 49;
+        // }
 
         this.initMenu();
     }
@@ -51,11 +56,18 @@ class History {
                     if (content) {
                         const progress = content.querySelector('.history__progress');
                         
-                        progress && (progress.innerHTML = `0${i + 1} / 0${slides.length}`);
+                        if (slides.length > 1) {
+                            progress && (progress.innerHTML = `0${i + 1} / 0${slides.length}`);
+                        }
                     }
 
                     if (video) {
-                        const play = slide.querySelector('.history__play');
+                        const play = document.createElement('div');
+                        const progress = content.querySelector('.history__progress');
+                        play.classList.add('history__play');
+                        play.innerHTML = 'Посмотреть видео';
+                        content.insertBefore(play, progress);
+
                         const videoClone = video.cloneNode(true);
                         videoClone.removeAttribute('loop');
                         videoClone.removeAttribute('data-autoplay');
