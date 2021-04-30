@@ -40,15 +40,14 @@
       font-size: 12px
 
     &:first-child
-
-      +media(1024px)
-        max-width: 114px
-
       +media($mobile-lg)
         max-width: 100%
 
       .achievements__text
         max-width: 148px
+
+        +media(1024px)
+          max-width: 114px
 
     &:last-child
       margin-right: 0
