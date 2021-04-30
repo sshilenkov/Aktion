@@ -65,13 +65,17 @@
     &:hover
       background-color: $light-accent
 
+      &::after
+        display: block
+
     &::after
       content: ''
       position: relative
-      display: block
+      display: none
       width: 7px
       height: 12px
       margin-left: 12px
+      margin-bottom: -2px
       background-image: url(/images/dist/intro-category/arrow.svg)
       background-position: center
       background-repeat: no-repeat

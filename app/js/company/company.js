@@ -1,4 +1,5 @@
 import animate from '../animate';
+import { debounce } from 'debounce';
 
 class Company {
     constructor(root) {
@@ -6,6 +7,7 @@ class Company {
 
         this.initScroller();
         this.initAnchors();
+        this.initCommunications();
     }
 
     initScroller() {
@@ -49,6 +51,45 @@ class Company {
                     }
                 })
             });
+        });
+    }
+
+    initCommunications() {
+        const commTitles = this.root.querySelectorAll('h3.communication__title');
+
+        commTitles.forEach((title) => {
+            const $content = $(title).next('.communication__content');
+
+            if ($content.length) {
+                $content.attr('data-open-height', $content.height());
+                $content.height(0);
+            }
+
+            $(title).on('click', () => {
+                $content.toggleClass('open');
+
+                if ($content.hasClass('open')) {
+                    $content.height($content.attr('data-open-height'));
+                } else {
+                    $content.height(0);
+                }
+            });
+        });
+
+        window.addEventListener('resize', debounce(this.calcCommunicationsContentHeight.bind(this), 200));
+    }
+
+    calcCommunicationsContentHeight() {
+        const commContent = this.root.querySelectorAll('.communication__content');
+
+        commContent.forEach((content) => {
+            const $content = $(content);
+            $content.height('auto');
+            $content.attr('data-open-height', $content.height());
+
+            if (!$content.hasClass('open')) {
+                $content.height(0);
+            }
         });
     }
 }

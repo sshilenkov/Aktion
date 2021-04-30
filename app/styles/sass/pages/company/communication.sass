@@ -1,0 +1,80 @@
+.communication__title
+    display: block
+    padding: 16px 0
+    border-bottom: 1px solid #ddd
+    color: $textcolor
+    font-size: $big-fontsize
+    line-height: 1.2
+    text-decoration: none
+    transition: color .3s
+
+    +media($tablet)
+        font-size: 32px
+
+    +media($mobile-lg)
+        font-size: 24px
+
+    &:hover
+        color: $accent
+        cursor: pointer
+
+.communication__title--last
+    border: none
+    
+.communication__content
+    display: grid
+    grid-template-columns: 440px 440px
+    grid-column-gap: 100px
+    overflow: hidden
+    transition: height .3s
+
+    +media($tablet)
+        grid-template-columns: 340px 340px
+        grid-column-gap: 40px
+
+    +media($mobile-lg)
+        grid-template-columns: 1fr
+
+    &.open
+        padding-bottom: 42px
+
+        +media($tablet)
+            padding-bottom: 32px
+
+        +media($mobile-lg)
+            padding-bottom: 22px
+
+.communication__col
+    line-height: $big-lineheight
+    padding-top: 42px
+
+    +media($tablet)
+        padding-top: 32px
+        font-size: 20px
+
+    +media($mobile-lg)
+        padding-top: 22px
+        font-size: 18px
+
+    &:nth-child(2n)
+        margin-right: 0
+
+    & > a
+        display: block
+        margin-bottom: 8px
+        color: $textcolor
+        text-decoration: none
+        transition: color .3s
+
+        &:hover
+            color: $accent
+
+.communication__description
+    margin-bottom: 24px
+    color: $second-text-color
+
+    +media($tablet)
+        margin-bottom: 20px
+
+    +media($mobile-lg)
+        margin-bottom: 14px

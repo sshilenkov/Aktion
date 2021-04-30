@@ -1,5 +1,4 @@
 import Swiper from 'swiper';
-import { debounce } from 'debounce';
 
 class Management {
     constructor(root) {
@@ -18,12 +17,18 @@ class Management {
                     slidesPerView: 'auto',
                     spaceBetween: 24,
                 },
-                640: {
+                641: {
                     slidesPerView: 4,
                     spaceBetween: 18,
                 },
                 791: {
                     spaceBetween: 24
+                }
+            },
+            on: {
+                breakpoint: (swiper) => {
+                    swiper.update();
+                    swiper.updateSlides();
                 }
             }
         });

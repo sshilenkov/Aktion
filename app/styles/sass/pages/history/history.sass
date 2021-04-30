@@ -161,7 +161,7 @@ main.history
 
 .history__content
     position: absolute
-    top: 50%
+    top: calc(50% + 40px)
     left: 16%
     z-index: 2
     max-width: 520px
@@ -176,9 +176,10 @@ main.history
 
     +media($mobile-lg)
         top: unset
-        bottom: -80px
+        bottom: 40px
         left: 100px
         max-width: 320px
+        transform: translateY(0) translate3d(0px, 0px, 0px) // safari fix animation
 
     +media($mobile-sm)
         max-width: 215px
@@ -220,17 +221,17 @@ main.history
     background-color: $accent
 
 .history__achievement
-    font-size: 34px
+    font-size: 24px
     line-height: 1.3
 
     +media($tablet)
-        font-size: 30px
+        font-size: 22px
 
     +media($mobile-lg)
-        font-size: 20px
+        font-size: 17px
 
     +media($mobile-sm)
-        font-size: 18px
+        font-size: 15px
 
 .history__play
     margin-top: 30px
@@ -239,9 +240,11 @@ main.history
     line-height: 1.4
 
     +media($tablet)
+        margin-top: 22px
         font-size: 14px
 
     +media($mobile-lg)
+        margin-top: 22px
         font-size: 12px
 
     &:hover
@@ -269,8 +272,11 @@ main.history
             border-width: 4px 0 4px 6px
 
 .history__progress
-    margin-top: 40px
+    margin-top: 30px
     font-size: 16px
+
+    +media($tablet)
+        margin-top: 22px
 
     +media($mobile-lg)
         font-size: 12px

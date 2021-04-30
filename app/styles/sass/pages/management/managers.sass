@@ -27,6 +27,12 @@
     height: auto
     margin-bottom: 22px
 
+    +media($mobile-lg)
+        margin-bottom: 14px
+
+    +media($mobile-sm)
+        margin-bottom: 16px
+
     & > img
         display: block
         width: 100%
@@ -39,6 +45,7 @@
 
     +media($tablet)
         font-size: 14px
+        line-height: 1.36
 
     +media($mobile-md)
         font-size: 16px
