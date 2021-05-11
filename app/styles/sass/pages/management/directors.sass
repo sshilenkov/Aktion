@@ -1,23 +1,36 @@
-.directors
-    +media($mobile-md)
-        margin-right: -24px
-    
-.directors__item
-    max-width: 300px
+.directors .swiper-wrapper
+    display: grid
+    grid-template-columns: repeat(6, 1fr)
+    grid-column-gap: 24px
+    grid-row-gap: 96px
+
+    +media($mobile-lg)
+        grid-column-gap: 18px
+        grid-row-gap: 64px
 
     +media($mobile-md)
-        max-width: 225px
-        width: 100% !important
+        grid-template-columns: repeat(3, 1fr)
 
     +media($mobile-sm)
-        max-width: 186px
-    
+        grid-template-columns: repeat(2, 1fr)
+        grid-column-gap: 24px
+        grid-row-gap: 30px
+
+.directors__item
+    max-width: 192px
+
+    &:nth-child(6n)
+        margin-right: 0
+
 .directors__photo
     width: 100%
     height: auto
-    margin-bottom: 24px
+    margin-bottom: 22px
 
     +media($mobile-lg)
+        margin-bottom: 14px
+
+    +media($mobile-sm)
         margin-bottom: 16px
 
     & > img
@@ -26,16 +39,24 @@
         height: 100%
 
 .directors__name
-    margin-bottom: 8px
+    margin-bottom: 4px
+    font-size: 20px
+    line-height: 1.5
 
     +media($tablet)
-        margin-bottom: 4px
+        font-size: 14px
+        line-height: 1.36
+
+    +media($mobile-md)
         font-size: 16px
 
 .directors__position
     color: $second-text-color
-    font-size: 18px
+    font-size: 14px
     line-height: 1.46
 
     +media($tablet)
-        font-size: 14px
+        font-size: 10px
+
+    +media($mobile-md)
+        font-size: 12px

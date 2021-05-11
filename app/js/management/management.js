@@ -4,7 +4,7 @@ class Management {
     constructor(root) {
         this.root = root;
 
-        this.initSlider();
+        // this.initSlider();
         this.initManagers();
     }
 
