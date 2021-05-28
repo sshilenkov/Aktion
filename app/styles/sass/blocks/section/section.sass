@@ -1,5 +1,9 @@
+$surfacing-animation-duration: 0.9375s
+$surfacing-translate-value: translateY(24px)
+    
 .section
     padding: 128px 0
+    transition: all .3s
 
     +media($tablet)
         padding: 72px 0
@@ -36,7 +40,7 @@
     +media($mobile-lg)
         font-size: $fontsize
         line-height: $lineheight
-    
+
 .section__accent
     color: $accent
 
@@ -207,6 +211,17 @@
         +media($mobile-lg)
             margin-bottom: 22px
             // font-size: 7.5vw
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 .section--news
 
@@ -241,6 +256,17 @@
 
         &::after
             border-color: $second-text-color
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 .section--technologies
     background-color: $bg-first
@@ -250,6 +276,17 @@
 
         +media($mobile-lg)
             margin-bottom: 24px
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 .section--career
     position: relative
@@ -286,10 +323,32 @@
         +media($mobile-lg)
             display: block
             margin-top: 16px
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 .section--cooperation
     +media($mobile-lg)
         padding-top: 61px
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 .section--ad
     .section__title
@@ -311,31 +370,32 @@
                 width: unset
                 max-height: 170px
                 transform: translateX(-50%)
+        
+    .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 // Intro Section
 
 .section--intro
-    --pt-intro: 232px
     position: relative
     z-index: 1
+    display: flex
+    justify-content: flex-start
+    align-items: center
     box-sizing: border-box
     min-height: 100vh
-    padding-top: var(--pt-intro)
+    padding-top: 40px
     padding-bottom: 40px
     color: #fff
-    transition: padding 600ms
-
-    +media($desktop-md)
-        --pt-intro: 239px
-
-    +media(991px)
-        --pt-intro: 212px
-
-    +media($mobile-md)
-        --pt-intro: 144px
-
-    +media($mobile-sm)
-        --pt-intro: 110px
+    transition: all 600ms
 
     &::before 
         content: ''
@@ -346,10 +406,20 @@
         width: 100%
         height: 100%
         background: rgba(0, 0, 0, .7)
-
+        
     .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+
         +media($mobile-sm)
             padding-right: 15px
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
     .section__title
         margin-bottom: 27px
@@ -383,6 +453,31 @@
         +media(991px)
             max-width: 650px
 
+    .section__scroll
+        position: absolute
+        left: 50%
+        bottom: 50px
+        padding: 10px
+        opacity: 0
+        transform: translateX(-50%)
+        transition: opacity .2s $surfacing-animation-duration
+
+        &:hover
+            cursor: pointer
+
+            svg
+                path
+                    fill: $light-accent
+
+        svg
+            display: block
+
+            path
+                transition: fill .3s
+
+    .section__scroll--visible
+        opacity: 1
+
 .section--open-category
     padding-top: calc(var(--pt-intro) - 30px)
 
@@ -397,10 +492,20 @@
 
     +media($mobile-lg)
         padding-top: 44px
-
+        
     .container
+        position: static
+        opacity: 0
+        transform: $surfacing-translate-value
+        transition: all $surfacing-animation-duration
+        
         +media($mobile-lg)
             padding-right: 18px
+
+    .container--animated
+        position: static
+        opacity: 1
+        transform: none
 
 // Home page sections end
 

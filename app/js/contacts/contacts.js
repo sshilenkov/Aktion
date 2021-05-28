@@ -4,6 +4,7 @@ class Contacts {
     constructor(root) {
         this.root = root;
 
+        this.animate = animate;
         this.initScroller();
     }
 

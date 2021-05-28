@@ -65,20 +65,20 @@
     &:hover
       background-color: $light-accent
 
-      &::after
-        display: block
+    //   &::after
+    //     display: block
 
-    &::after
-      content: ''
-      position: relative
-      display: none
-      width: 7px
-      height: 12px
-      margin-left: 12px
-      margin-bottom: -2px
-      background-image: url(/images/dist/intro-category/arrow.svg)
-      background-position: center
-      background-repeat: no-repeat
+    // &::after
+    //   content: ''
+    //   position: relative
+    //   display: none
+    //   width: 7px
+    //   height: 12px
+    //   margin-left: 12px
+    //   margin-bottom: -2px
+    //   background-image: url(/images/dist/intro-category/arrow.svg)
+    //   background-position: center
+    //   background-repeat: no-repeat
 
   &__img
     display: flex
@@ -114,7 +114,7 @@
   &__all
     position: absolute
     top: var(--m-item)
-    left: 100%
+    left: calc(100% - 18px)
     display: flex
     align-items: center
     justify-content: center
@@ -130,6 +130,7 @@
     transition: border-color 300ms
 
     +media($desktop-md)
+      left: calc(100% - 22px)
       min-width: 94px
       height: 48px
       font-size: 18px

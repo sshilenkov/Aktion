@@ -26,7 +26,8 @@ export default class Header {
         const DEFAULT_OFFSET_TOP = 200;
         const $window = $(window);
         const $intro =  $('.section.section--intro');
-        const offsetTop = $intro.length ? $intro.offset().top + $intro.outerHeight() : DEFAULT_OFFSET_TOP;
+        const $header = $('.header--main');
+        const offsetTop = $intro.length ? $intro.offset().top + $intro.outerHeight() - this.header.outerHeight() : DEFAULT_OFFSET_TOP;
 
         const onScroll = () => {
             let currentScroll = $window.scrollTop();

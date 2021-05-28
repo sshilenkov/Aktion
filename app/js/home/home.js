@@ -1,6 +1,6 @@
 import Swiper, { Navigation } from 'swiper';
 import { debounce } from 'debounce';
-import Lax from 'lax.js';
+import animate from '../animate';
 
 // Copy tabby.js to manually disable focus() on tab change.
 // Need to correct autoplay tab change in second section.
@@ -10,7 +10,9 @@ export default class Home {
     constructor(root) {
         this.root = root;
         this.autoplay = true;
+        this.animate = animate;
 
+        this.initScroller();
         this.initSlider('.technologies');
         this.initSlider('.cooperation');
         this.initProducts();
@@ -22,6 +24,26 @@ export default class Home {
         window.onload = () => {
             this.technologiesContentHeight();
         }
+    }
+
+    initScroller() {
+        const scroller = this.root.querySelector('.section__scroll');
+
+        scroller.addEventListener('click', () => {
+            const target = this.root.querySelector('.section--achievements');
+            const headerHeight = document.querySelector('.header').offsetHeight - 5;
+
+            this.animate({
+                duration: 1000,
+                timing: (linear) => linear,
+                draw(progress) {
+                    const targetTop = target.getBoundingClientRect().top + window.scrollY;
+                    window.scrollTo({
+                        top: window.scrollY + progress * (targetTop - window.scrollY - headerHeight)
+                    });
+                }
+            })
+        });
     }
     
     initSlider(className) {
@@ -135,27 +157,27 @@ export default class Home {
     }
 
     initLax() {
-        Lax.init();
-        Lax.addDriver('scrollY', () => window.scrollY);
+        const intro = this.root.querySelector('.section--intro .container');
+        const containers = this.root.querySelectorAll('.section:not(.section--intro) .container');
+        const scroll = this.root.querySelector('.section__scroll');
 
-        Lax.addElements('.section, .section__content', {
-            scrollY: {
-                opacity: [
-                    ["elInY - 600", "elInY - 300"],
-                    {
-                        1144: [1, 1],
-                        1400: [0, 1],
-                    }
-                ],
-                translateY: [
-                    ["elInY - 600", "elInY - 300"],
-                    {
-                        1144: [0, 0],
-                        1400: [100, 0],
-                    }
-                ]
-            }
+        window.addEventListener('load', () => {
+            intro.classList.add('container--animated');
+            scroll.classList.add('section__scroll--visible');
+            containers.forEach((container) => {
+                if (container.getBoundingClientRect().top <= window.outerHeight - 200) {
+                    container.classList.add('container--animated');
+                }
+            });
         });
+
+        window.addEventListener('scroll', () => {
+            containers.forEach((container) => {
+                if (container.getBoundingClientRect().top <= window.outerHeight - 200) {
+                    container.classList.add('container--animated');
+                }
+            });
+        })
     }
 
     handleIntroCategory () {

@@ -12,7 +12,7 @@ export default class Career {
         this.addClasses();
         this.initParallax();
         this.vacanciesAnchor();
-        // this.calcConditionsImgHeight();
+        this.calcConditionsImgHeight();
         this.initTabs();
         this.initVacancies();
 
@@ -64,11 +64,12 @@ export default class Career {
         const leftElem = people.querySelector('.people__holder--19');
         const windowWidth = window.innerWidth;
         const windowHeight = window.innerHeight;
+        const header = document.querySelector('.header');
 
         const centerX = windowWidth / 2;
         const centerY = windowHeight / 2;
-        const coefficientX = (Math.abs(leftElem.offsetLeft) + windowWidth) / people.offsetWidth;
-        const coefficientY = (Math.abs(topElem.offsetTop) + windowHeight) / people.offsetHeight;
+        const coefficientX = Math.abs(leftElem.offsetLeft) / centerX;
+        const coefficientY = (Math.abs(topElem.offsetTop) + windowHeight) / (people.offsetHeight - header.offsetHeight);
 
         requestAnimationFrame(() => {
             gsap.to(people, {
