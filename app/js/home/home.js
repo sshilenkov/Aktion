@@ -15,6 +15,7 @@ export default class Home {
         this.initScroller();
         this.initSlider('.technologies');
         this.initSlider('.cooperation');
+        this.initSlider('.our-authors');
         this.initProducts();
         this.handleIntroCategory();
 
@@ -161,7 +162,7 @@ export default class Home {
         const containers = this.root.querySelectorAll('.section:not(.section--intro) .container');
         const scroll = this.root.querySelector('.section__scroll');
 
-        window.addEventListener('load', () => {
+        window.addEventListener('DOMContentLoaded', () => {
             intro.classList.add('container--animated');
             scroll.classList.add('section__scroll--visible');
             containers.forEach((container) => {
