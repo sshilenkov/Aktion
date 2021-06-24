@@ -3,13 +3,17 @@
   flex-direction: column
   justify-content: flex-start
   padding: 32px
+  text-decoration: none
 
   +media($mobile-lg)
     padding: 21px
 
   &:hover
-    .author-card__text
-      display: block
+    .author-card__link
+      transform: translateX(0)
+
+      span
+        opacity: 1
 
 .author-card__image
   display: block
@@ -21,10 +25,10 @@
   +media($mobile-lg)
     margin-bottom: 20px
 
-  +media($mobile-sm)
+  +media(375px)
     max-width: 232px
     width: 100%
-    height: 240px
+    height: 210px
     margin: 0 auto 21px
 
   img
@@ -68,14 +72,21 @@
     line-height: 1.5
 
 .author-card__more
-  display: inline-flex
-  align-items: center
-  min-height: 20px
+  overflow: hidden
   margin-top: auto
   color: #f1361d
   font-size: 16px
   text-decoration: none
 
-.author-card__text
-  display: none
-  margin-right: 7px
+.author-card__link
+  display: inline-flex
+  align-items: center
+  transform: translateX(calc(-100% + 29px))
+  transition: transform 400ms
+
+  span
+    opacity: 0
+    transition: opacity 400ms
+
+.author-card__icon
+  margin-left: 7px

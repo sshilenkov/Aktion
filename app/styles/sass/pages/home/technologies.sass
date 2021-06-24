@@ -6,6 +6,10 @@
 
     +media(580px)
         width: 80% !important
+
+    &:hover
+        .technologies__title
+            color: #111
     
 .technologies__icon
     position: relative
@@ -25,6 +29,7 @@
 .technologies__title
     margin-bottom: 8px
     color: $accent
+    transition: color 400ms
 
 .technologies__description
     color: $second-text-color

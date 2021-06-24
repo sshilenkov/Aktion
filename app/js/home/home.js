@@ -19,8 +19,8 @@ export default class Home {
         this.initProducts();
         this.handleIntroCategory();
 
-        this.initLax();
-        
+        // this.initLax(); // Apply animation of the appearance of blocks on the main page to all pages
+
         this.bindTechnologiesContentHeight = this.technologiesContentHeight.bind(this);
         window.onload = () => {
             this.technologiesContentHeight();

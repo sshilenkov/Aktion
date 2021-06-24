@@ -5,6 +5,7 @@ window.$ = $
 // // Import vendor jQuery plugin example (not module)
 // require('~/app/libs/mmenu/dist/mmenu.js')
 
+import { handleAnimationContainer } from './helpers';
 import Header from './header/header';
 import Footer from './footer/footer';
 import Home from './home/home';
@@ -16,6 +17,8 @@ import Company from './company/company';
 import Management from './management/management';
 
 document.addEventListener('DOMContentLoaded', () => {
+	const $container = $('.container');
+	$container.length && handleAnimationContainer($container);
 
 	const header = document.querySelector('header.header');
 	header && new Header(header);
@@ -43,5 +46,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const footer = document.querySelector('footer.footer');
 	footer && new Footer(footer);
-	
 })

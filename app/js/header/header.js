@@ -33,7 +33,7 @@ export default class Header {
             let currentScroll = $window.scrollTop();
 
             if (currentScroll > offsetTop) {
-                this.header.addClass('header--fixed');    
+                this.header.addClass('header--fixed');
             } else {
                 this.header.removeClass('header--fixed');
             }

@@ -56,10 +56,6 @@ $surfacing-translate-value: translateY(24px)
         +media($mobile-lg)
             margin-right: 7px
 
-        +media($mobile-md)
-            width: 6px
-            height: 10px
-
     &:hover
         color: #000
 
@@ -261,6 +257,7 @@ $surfacing-translate-value: translateY(24px)
         transform: none
 
 .section--our-authors
+    background-color: #f7f6f4
 
     .section__title
         margin-bottom: 64px
@@ -532,6 +529,9 @@ $surfacing-translate-value: translateY(24px)
 
 .section--open-category
     padding-top: calc(var(--pt-intro) - 30px)
+
+    +media($mobile-md)
+        padding-top: 70px
 
 // Achievements Section
 
@@ -979,6 +979,7 @@ $surfacing-translate-value: translateY(24px)
             top: -83%
             left: -3.2%
             z-index: -1
+            transform: rotate(180deg)
             width: 100px
             height: 77px
             background-image: url('/images/dist/quotes.svg')
