@@ -1,3 +1,4 @@
+import Swiper from 'swiper';
 import animate from '../animate';
 import { debounce } from 'debounce';
 
@@ -8,6 +9,7 @@ class Company {
         this.initScroller();
         this.initAnchors();
         this.initCommunications();
+        this.initOurProjectsCarousel();
     }
 
     initScroller() {
@@ -89,6 +91,17 @@ class Company {
 
             if (!$content.hasClass('open')) {
                 $content.height(0);
+            }
+        });
+    }
+
+    initOurProjectsCarousel() {
+        new Swiper('.js-our-projects', {
+            breakpoints: {
+                320: {
+                    slidesPerView: 1.1,
+                    spaceBetween: 24,
+                },
             }
         });
     }
