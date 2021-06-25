@@ -15,6 +15,7 @@ import News from './news/news';
 import History from './history/history';
 import Company from './company/company';
 import Management from './management/management';
+import { Authors } from './authors';
 
 document.addEventListener('DOMContentLoaded', () => {
 	const $container = $('.container');
@@ -46,4 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const footer = document.querySelector('footer.footer');
 	footer && new Footer(footer);
+
+	const authors = document.querySelector('.authors');
+	authors && new Authors(authors);
 })
