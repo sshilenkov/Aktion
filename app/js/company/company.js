@@ -97,9 +97,15 @@ class Company {
 
     initOurProjectsCarousel() {
         new Swiper('.js-our-projects', {
+            slidesPerView: 1.14,
+            spaceBetween: 16,
             breakpoints: {
-                320: {
-                    slidesPerView: 1.1,
+                640: {
+                    sliderPerView: 1.5,
+                    spaceBetween: 18,
+                },
+                1500: {
+                    slidesPerView: 1.2,
                     spaceBetween: 24,
                 },
             }
