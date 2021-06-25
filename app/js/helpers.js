@@ -6,17 +6,16 @@ export function handleAnimationContainer ($root) {
 
 	$scroll.lenght && $scroll.addClass('section__scroll--visible');
 
-  $container.each((index, container) => {
-      if (container.getBoundingClientRect().top <= window.outerHeight - 200) {
-          container.classList.add('container--animated');
-      }
-  });
-
-  $(window).on('scroll', throttle(() => {
+  const handleAnimation = () => {
     $container.each((index, container) => {
-        if (container.getBoundingClientRect().top <= window.outerHeight - 200) {
-            container.classList.add('container--animated');
-        }
+      if (container.hasAttribute('data-not-animate')) return;
+
+      if (container.getBoundingClientRect().top <= window.outerHeight - 200) {
+        container.classList.add('container--animated');
+      }
     });
-  }, 150))
+  }
+
+  handleAnimation();
+  $(window).on('scroll', throttle(handleAnimation, 150))
 }
