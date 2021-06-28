@@ -1,4 +1,4 @@
- export class Authors {
+ export default class Authors {
   constructor (root) {
     this.$root = $(root);
     this.$filters = this.$root.find('.authors__filter');

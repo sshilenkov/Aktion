@@ -5,6 +5,7 @@ window.$ = $
 // // Import vendor jQuery plugin example (not module)
 // require('~/app/libs/mmenu/dist/mmenu.js')
 
+import initBlocks from './blocks';
 import { handleAnimationContainer } from './helpers';
 import Header from './header/header';
 import Footer from './footer/footer';
@@ -15,9 +16,12 @@ import News from './news/news';
 import History from './history/history';
 import Company from './company/company';
 import Management from './management/management';
-import { Authors } from './authors';
+import Authors from './authors';
+import Innovations from './innovations';
 
 document.addEventListener('DOMContentLoaded', () => {
+	initBlocks();
+
 	const $container = $('.container');
 	$container.length && handleAnimationContainer($container);
 
@@ -50,4 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	const authors = document.querySelector('.authors');
 	authors && new Authors(authors);
+
+	const innovations = document.querySelector('.innovations');
+	innovations && new Innovations(innovations);
 })

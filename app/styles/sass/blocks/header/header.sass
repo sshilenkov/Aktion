@@ -26,17 +26,23 @@
         fill: $light-accent
         transition: fill 300ms
         
-    .header__links > li > a:hover
+    .header__links li:not(.header__active) a:hover
         color: #fff
+
+        +media($mobile-md)
+            color: #000
 
     .header__links > li.header__active > a
         color: $light-accent
+
+        +media($mobile-md)
+            color: #f1361d
 
 .header--open-hamburger
     background-color: #ffffff
     transition: background-color 300ms
 
-    .header__logo svg path 
+    .header__logo svg path
         fill: $accent
 
 .header--fixed
@@ -47,7 +53,7 @@
     .header__logo svg path
         fill: #f1361d
 
-    .header__links > li > a:hover
+    .header__links > li:not(.header__active) a:hover
         color: #000
 
     .header__links > li.header__active > a
@@ -79,6 +85,7 @@
         left: 0
         display: block
         visibility: hidden
+        height: calc(100vh - 58px)
         opacity: 0
         padding-top: 26px
         background-color: #fff
@@ -121,9 +128,8 @@
         &.header__active > a
             color: $accent
 
-            &:hover
-                color: $accent
-                cursor: default
+        &:not(.header__active) a:hover
+            color: $textcolor
 
         & > a
             display: block
@@ -131,9 +137,6 @@
             color: $second-text-color
             text-decoration: none
             transition: color .3s
-
-            &:hover
-                color: $textcolor
 
             +media($mobile-lg)
                 padding: 8px 24px

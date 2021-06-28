@@ -325,7 +325,14 @@ $surfacing-translate-value: translateY(24px)
 
         +media($mobile-lg)
             margin-bottom: 24px
-        
+
+    .section__link
+        display: inline-block
+        margin-top: 70px
+
+        +media($mobile-lg)
+            margin-top: 30px
+
     .container
         position: static
         opacity: 0
@@ -1211,3 +1218,91 @@ $surfacing-translate-value: translateY(24px)
     .section__accent,
     .section__title
         line-height: 1.25
+
+
+.section--communication
+    background-color: #f7f6f4
+
+.section--intro-innovation
+    padding: 0
+    background-color: #001324
+
+    .container
+        padding: 155px 32px 147px
+
+        +media($desktop-md)
+            padding-bottom: 128px
+
+        +media($laptop-sm)
+            padding-top: 145px
+            padding-bottom: 72px
+
+        +media($mobile-md)
+            padding: 93px 20px 69px
+
+    .section__rubric
+        margin-bottom: 30px
+        color: #ff6854
+        font-size: 24px
+
+        +media($laptop-sm)
+            margin-bottom: 15px
+            font-size: 20px
+
+        +media($mobile-md)
+            font-size: 24px
+
+    .section__title
+        margin-bottom: 28px
+        color: #f7f6f4
+        font-weight: 900
+        font-size: 64px
+        line-height: 1.05
+        letter-spacing: .9px
+
+        +media($desktop-md)
+            font-size: 54px
+
+        +media($laptop-sm)
+            margin-bottom: 22px
+            font-size: 36px
+
+        +media($mobile-md)
+            font-size: 26px
+            letter-spacing: -0.05px
+
+    .section__text
+        max-width: 791px
+        color: rgba(#fff, .4)
+        font-size: 22px
+        line-height: 1.45
+
+        +media($laptop-sm)
+            max-width: 540px
+            font-size: 16px
+
+        +media($mobile-md)
+            font-size: 14px
+
+    .button-down
+        position: absolute
+        bottom: -32px
+        left: 32px
+
+        +media($laptop-sm)
+            bottom: -22px
+
+        +media($mobile-md)
+            bottom: -20px
+            left: 20px
+
+.section--innovation-cards
+    padding: 98px 0 143px
+
+    +media($laptop-sm)
+        padding-top: 72px
+        padding-bottom: 103px
+
+    +media($mobile-md)
+        padding-top: 44px
+        padding-bottom: 44px

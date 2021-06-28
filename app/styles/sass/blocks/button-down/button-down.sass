@@ -1,0 +1,29 @@
+.button-down
+  position: relative
+  width: 64px
+  height: 64px
+  border: 0
+  border-radius: 50%
+  background-color: #f1361d
+  cursor: pointer
+
+  +media($laptop-sm)
+    width: 43px
+    height: 43px
+
+  +media($mobile-md)
+    width: 40px
+    height: 40px
+
+  &::before
+    content: ''
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%) rotate(135deg)
+    padding: 8px
+    border-top: 2px solid #fff
+    border-right: 2px solid #fff
+
+    +media($laptop-sm)
+      padding: 5px
